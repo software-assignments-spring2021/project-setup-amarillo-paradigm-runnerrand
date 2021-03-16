@@ -1,11 +1,10 @@
 import  './ProfilePicture.css';
+import profile from './profile.png';
 
 const ProfilePicture = (props) =>{
     return (
         <section>
-            {/* <picture></picture> */}
-            {/* <p> </p> */}
-            <img src="./profile.png"></img>
+            <img src={profile} id="profilePic"/>
         </section>
     )
 }

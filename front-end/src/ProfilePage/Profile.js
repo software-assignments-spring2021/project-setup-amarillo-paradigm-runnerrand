@@ -1,11 +1,9 @@
 // import logo from './logo.svg';
 import './Profile.css';
 import ProfilePicture from './ProfilePicture';
-// import ProfilePicture from './ProfilePicture';
 
 const Profile = (props) =>{
     return(
-        // <section className="profile">
         <section>
             <ProfilePicture> </ProfilePicture>
             <p></p>
