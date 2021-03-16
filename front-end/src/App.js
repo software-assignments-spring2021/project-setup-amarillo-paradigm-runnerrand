@@ -2,14 +2,14 @@
 import './App.css';
 import Profile from './ProfilePage/Profile'
 import AccountDetails from './ProfilePage/AccountDetails'
+import PaymentMethod from './ProfilePage/PaymentMethod'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Profile username={"zijiahu"}> Hello</Profile>
-        {/* <p> Hello </p> */}
+        {/* <img src={profile} id="profilePic"/> */}
+        <Profile username={"zijiahu"}> </Profile>
       </header>
     </div>
   );
@@ -21,10 +21,21 @@ function Account(){
     <header className="App-header">
       {/* <img src={logo} className="App-logo" alt="logo" /> */}
       <AccountDetails username ={"zijiahu"}>Hello</AccountDetails>
-      {/* <p> Hello </p> */}
       </header>
     </div>
   );
 }
 
-export default Account;
+function Payment(){
+  return(
+  <div className="Payment">
+    <header className="App-header">
+      <PaymentMethod> </PaymentMethod>
+      </header>
+    </div>
+  );
+}
+
+// export default Account;
+export default App;
+// export default Payment;
