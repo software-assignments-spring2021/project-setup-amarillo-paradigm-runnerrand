@@ -1,0 +1,45 @@
+#month{
+    width: 10%;
+    padding: 1px 1px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+/* #name{
+    padding: 14px 10px 14px 50px;
+    width: 100%;
+    background-color: #fcfcfc;
+    border: 1px solid #00000033;
+    outline: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border-radius: 3px;
+    color: #333;
+} */
+
+#year{
+    width: 10%;
+    padding: 1px 1px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+button {
+    /* background-color: #909090; */
+    background-color: white;
+    /* font-family: georgia; */
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+button:hover {
+    /* background-color: #909090; */
+    background-color: #909090;
+    /* font-family: georgia; */
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
