@@ -10,7 +10,7 @@ const Welcome = (props) => (
           <div>
             <p onClick={props.action}>Log In</p>
           </div>
-        );
+        ); 
   </div>
 )
 const Section = () => {
