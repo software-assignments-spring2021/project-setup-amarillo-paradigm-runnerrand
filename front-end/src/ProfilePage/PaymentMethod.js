@@ -10,34 +10,38 @@ const PaymentMethod = () =>{
     return (
         <section>
             <h1>Payment Method</h1>
-            {/* {cardTypes.map(item => (
-                <input type="checkbox"/>
-            ) )} */}
-            <p>Credit Card Type: </p>
-            <input type="radio" name="selectedCardType"/> {cardTypes[0]}
+            <hr></hr>
+
+            <p className="item">Credit Card Type: </p>
+            {cardTypes.map(item => (
+                <div>
+                    <input type="radio" name="selectedCardType"/>
+                    <label >{item}</label>
+                </div>
+            ) )}
+
             <br></br>
-            <input type="radio" name="selectedCardType"/> {cardTypes[1]}
+            <label for="cardNumber" className="item">Credit Card Number:</label><br></br>
+            <input type="text" id="cardNum"/> <br></br>
+
             <br></br>
-            <input type="radio" name="selectedCardType"/> {cardTypes[2]}
-            
-            <h4></h4>
-            <label for="cardNumber">Credit Card Number:</label><br></br>
-            <input type="text"/> <br></br>
+            <label for="cardHolder" className="item">Card Holder Name:</label><br></br>
+            <input type="text" id="cardNum"/> <br></br>
 
-            <h4></h4>
-            <label for="cardHolder">Card Holder Name:</label><br></br>
-            <input type="text" id="name"/> <br></br>
+            <br></br>
+            <label for="expirationDate" className="item">Expiration Date:</label><br></br>
+            <input type="text" className="smallBox" placeholder='MM'/>
+            <input type="text" className="smallBox" placeholder='YY'/> <br></br>
 
-            <h4></h4>
-            <label for="expirationDate">Expiration Date:</label><br></br>
-            <input type="text" id="month"/>
-            <input type="text" id="year"/> <br></br>
+            <br></br>
+            <label for="zipCode" className="item">Zip Code:</label><br></br>
+            <input type="text" id="zip"/>
 
-            <h4></h4>
-            <label for="csv">CSV:</label><br></br>
-            <input type="text" id="month"/>
+            <br></br><br></br>
+            <label for="csv" className="item">CVC:</label><br></br>
+            <input type="text" className="smallBox"/>
 
-            <h4></h4>
+            <br></br><br></br>
             <button onClick="handleSave"> Save</button>
             <button onClick="handleCancel"> Cancel</button>
 
@@ -45,6 +49,11 @@ const PaymentMethod = () =>{
     )
 }
 
+const display = (name) =>{
+    return(
+        <input type="radio"/>
+    )
+}
 const handleSave =()=>{
     // save all the information
 }
