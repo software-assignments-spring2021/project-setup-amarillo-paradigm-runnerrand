@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import Profile from './ProfilePage/Profile'
+import AccountDetails from './ProfilePage/AccountDetails'
 
 function App() {
   return (
@@ -14,4 +15,16 @@ function App() {
   );
 }
 
-export default App;
+function Account(){
+  return(
+  <div className="Account">
+    <header className="App-header">
+      {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      <AccountDetails username ={"zijiahu"}>Hello</AccountDetails>
+      {/* <p> Hello </p> */}
+      </header>
+    </div>
+  );
+}
+
+export default Account;
