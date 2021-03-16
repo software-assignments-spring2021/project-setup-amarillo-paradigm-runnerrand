@@ -2,6 +2,7 @@
 import './App.css';
 import Profile from './ProfilePage/Profile'
 import AccountDetails from './ProfilePage/AccountDetails'
+import ResetPassword from './ResetPassword'
 
 function App() {
   return (
@@ -27,4 +28,14 @@ function Account(){
   );
 }
 
-export default Account;
+function PasswordReset(){
+  return(
+    <div className="PasswordReset">
+      <header className="App-header">
+        <ResetPassword>reset</ResetPassword>
+      </header>
+    </div>
+  )
+}
+
+export default PasswordReset;
