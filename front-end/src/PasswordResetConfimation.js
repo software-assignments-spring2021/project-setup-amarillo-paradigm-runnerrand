@@ -1,19 +1,19 @@
 import React from 'react';
-import './notification.scss';
+import './PasswordResetConfirmation.css';
 
-const Notification = (props) => (
-  <div>
-    <div className="Notification">{props.text}</div>
-    {(() => {
-      if (props.error !== '') {
-        return (
-          <div className="Notification Notification--error">
-            {props.error}
-          </div>
-        );
-      }
-    })()}
-  </div>
+
+
+const PasswordResetConfirmation = (props) => (
+    <div>
+        return(
+            <article>    
+                <h1>Welcome</h1>
+                <p1>A reset link has been sent to your email address. Please check and use the link to reset your password </p1>
+                <p2>Please go back to Login Page to sign in! </p2>
+
+             </article>
+    );
+    </div>
 );
 
-export default Notification;
+export default PasswordResetConfirmation;
