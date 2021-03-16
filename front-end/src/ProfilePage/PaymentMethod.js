@@ -14,11 +14,11 @@ const PaymentMethod = () =>{
                 <input type="checkbox"/>
             ) )} */}
             <p>Credit Card Type: </p>
-            <input type="checkbox" /> {cardTypes[0]}
+            <input type="radio" name="selectedCardType"/> {cardTypes[0]}
             <br></br>
-            <input type="checkbox"/> {cardTypes[1]}
+            <input type="radio" name="selectedCardType"/> {cardTypes[1]}
             <br></br>
-            <input type="checkbox"/> {cardTypes[2]}
+            <input type="radio" name="selectedCardType"/> {cardTypes[2]}
             
             <h4></h4>
             <label for="cardNumber">Credit Card Number:</label><br></br>
