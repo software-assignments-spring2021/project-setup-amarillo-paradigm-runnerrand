@@ -3,39 +3,33 @@ import './App.css';
 import Profile from './ProfilePage/Profile'
 import AccountDetails from './ProfilePage/AccountDetails'
 import PaymentMethod from './ProfilePage/PaymentMethod'
+import React from 'react'
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={profile} id="profilePic"/> */}
-        <Profile username={"zijiahu"}> </Profile>
-      </header>
-    </div>
-  );
+    <>
+      <div className="main">
+        <Router>
+          <Switch>
+            <Route path = "/">
+              <Profile username={"zijiahu"}></Profile>
+            </Route>
+
+            <Route path = "/">
+              <AccountDetails username ={"zijiahu"}></AccountDetails>
+            </Route>
+
+            <Route path = "/">
+              <PaymentMethod> </PaymentMethod>
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </>
+  )
 }
 
-function Account(){
-  return(
-  <div className="Account">
-    <header className="App-header">
-      {/* <img src={logo} className="App-logo" alt="logo" /> */}
-      <AccountDetails username ={"zijiahu"}>Hello</AccountDetails>
-      </header>
-    </div>
-  );
-}
-
-function Payment(){
-  return(
-  <div className="Payment">
-    <header className="App-header">
-      <PaymentMethod> </PaymentMethod>
-      </header>
-    </div>
-  );
-}
-
-// export default Account;
 export default App;
-// export default Payment;

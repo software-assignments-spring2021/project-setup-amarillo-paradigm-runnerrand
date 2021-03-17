@@ -2,6 +2,16 @@
     text-align: center;
 }
 
+.title{
+    /* font-family: Andale Mono,cochin; */
+    font-family: georgia;
+}
+
+.element {
+    /* font-family: Andale Mono,cochin; */
+    font-family: georgia;
+}
+
 
 .smallBox{
     padding: 10px 10px;
@@ -42,7 +52,8 @@
 button {
     /* background-color: #909090; */
     background-color: white;
-    /* font-family: georgia; */
+    font-family: georgia;
+    /* font-family: Andale Mono,cochin; */
     color: black;
     font-size: 20px;
     border-radius: 10px;
@@ -52,7 +63,8 @@ button {
 button:hover {
     /* background-color: #909090; */
     background-color: #909090;
-    /* font-family: georgia; */
+    font-family: georgia;
+    /* font-family: Andale Mono,cochin; */
     color: black;
     font-size: 20px;
     border-radius: 10px;
@@ -61,4 +73,7 @@ button:hover {
 
 .item {
     font-family: georgia;
+    /* font-family: Andale Mono,cochin; */
+    /* line-height: 2; */
+    /* justify-content: space-around; */
 }

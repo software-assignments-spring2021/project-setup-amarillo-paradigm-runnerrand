@@ -9,14 +9,9 @@
     color: white;
 }
 
-.profile:hover {
-    /* background-color: black; */
-    background-color: white;
-    color: #909090;
-}
-
 username {
     font-size: 20px;
+    text-align: center;
     font-family: georgia;
     color: white;
 

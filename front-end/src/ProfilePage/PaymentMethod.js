@@ -9,14 +9,14 @@ const cardTypes = [
 const PaymentMethod = () =>{
     return (
         <section>
-            <h1>Payment Method</h1>
+            <h1 className="title">Payment Method</h1>
             <hr></hr>
 
             <p className="item">Credit Card Type: </p>
             {cardTypes.map(item => (
                 <div>
                     <input type="radio" name="selectedCardType"/>
-                    <label >{item}</label>
+                    <label className="element">{item}</label>
                 </div>
             ) )}
 

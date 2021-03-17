@@ -1,10 +1,14 @@
-// import logo from './logo.svg';
-import './Profile.css';
-import ProfilePicture from './ProfilePicture';
+// import logo from './logo.svg'
+import './Profile.css'
+import ProfilePicture from './ProfilePicture'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import PaymentMethod from './PaymentMethod'
+// import AccountDetails from './AccountDetails'
 
 const Profile = (props) =>{
     return(
-        <section>
+        <section className="profile">
             <ProfilePicture> </ProfilePicture>
             <p></p>
             <username>{props.username}</username>
@@ -15,11 +19,25 @@ const Profile = (props) =>{
             <p></p>
             <button onClick={handleLogOut}>Log out</button>
         </section>
+
+        // <section>
+        //     <ProfilePicture> </ProfilePicture>
+        //     <p></p>
+        //     <username>{props.username}</username>
+        //     <nav className = "home">
+        //         <Link to="/">What's New</Link>
+        //         <Link to="/recent">Recently Visited</Link>
+        //         <Link to="/recommend">Recommend</Link>
+        //     </nav>
+        // </section>
     )
 }
 
 const handleAccountDetail = ()=>{
     // redirect to account detail page
+    return(
+        <Link to="./AccountDetails"></Link>
+    )
 }
 
 const handlePaymentMethod = ()=>{
