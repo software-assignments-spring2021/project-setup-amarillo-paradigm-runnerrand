@@ -1,5 +1,5 @@
-import  './ProfilePicture.css';
-import profile from './profile.png';
+import  './ProfilePicture.css'
+import profile from './profile.png'
 
 const ProfilePicture = (props) =>{
     return (
@@ -9,4 +9,4 @@ const ProfilePicture = (props) =>{
     )
 }
 
-export default ProfilePicture;
+export default ProfilePicture

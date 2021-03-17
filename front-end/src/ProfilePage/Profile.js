@@ -4,7 +4,7 @@ import ProfilePicture from './ProfilePicture'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PaymentMethod from './PaymentMethod'
-// import AccountDetails from './AccountDetails'
+import AccountDetails from './AccountDetails'
 
 const Profile = (props) =>{
     return(
@@ -37,4 +37,4 @@ const handleLogOut = ()=>{
     // redirect to log out page
 }
 
-export default Profile;
+export default Profile
