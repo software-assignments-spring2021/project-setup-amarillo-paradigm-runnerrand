@@ -19,17 +19,6 @@ const Profile = (props) =>{
             <p></p>
             <button onClick={handleLogOut}>Log out</button>
         </section>
-
-        // <section>
-        //     <ProfilePicture> </ProfilePicture>
-        //     <p></p>
-        //     <username>{props.username}</username>
-        //     <nav className = "home">
-        //         <Link to="/">What's New</Link>
-        //         <Link to="/recent">Recently Visited</Link>
-        //         <Link to="/recommend">Recommend</Link>
-        //     </nav>
-        // </section>
     )
 }
 
