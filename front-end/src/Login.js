@@ -34,25 +34,7 @@ class Login extends Component {
             },
             body: JSON.stringify(this.state)
         })
-        .then((response) => {
-            console.log(response);
-            if(response.ok) {
-                response.json().then(body => {
-                    if (body.mfa) {
-                        this.props.history.push({
-                            pathname: '/mfa',
-                            state: {sig_response: body.mfa}
-                        });
-                    } else {
-                        this.props.history.push('/home');
-                    }
-                });
-            } else {
-                response.json().then(body => {
-                    this.setState({errorMsg: body.error})
-                });
-            }
-        })
+        
     }
 
     render() {
@@ -78,3 +60,4 @@ class Login extends Component {
     }
 }
 export default Login;
+
