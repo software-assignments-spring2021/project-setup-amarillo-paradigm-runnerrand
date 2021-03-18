@@ -1,15 +1,42 @@
-import logo from './logo.svg'
-import './App.css'
-import PasswordResetConfirmation from "./PasswordResetConfirmation"
+import './App.css';
+// import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+import Welcome from './Welcome';
+import Login from './Login';
+import ResetPassword from './ResetPassword';
+import Profile from './ProfilePage/Profile'
+import NavBar from './Navbar';
+import Signup from './Signup'
 
-function App() {
+const App = (props)=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <PasswordResetConfirmation></PasswordResetConfirmation>
-      </header> 
-    </div>
-  );
-}
+    <Router>
+        <Route exact path="/" >
+          <Welcome />
+          </Route>
+        
+        <Route exact path="/Login" >
+          <NavBar />
+          <Login />
+          </Route>
 
-export default App
+        <Route exact path="/Signup" >
+          <NavBar />
+          <Signup />
+          </Route>  
+
+        <Route exact path="/ProfilePage/Profile" >
+          <NavBar />
+          <Profile />
+        </Route>
+
+        <Route exact path="/reset" >
+          <NavBar />
+          <ResetPassword />
+          </Route>
+
+      </Router>
+    )
+  }
+
+export default App;

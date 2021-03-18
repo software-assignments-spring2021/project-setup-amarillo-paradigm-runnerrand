@@ -1,31 +1,48 @@
-import React from 'react';
 import './Welcome.css';
+import Navbar from 'react-bootstrap/Navbar';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import NavBar from './Navbar'
 
-const Welcome = (props) => (
-  <div>
-      return (
-          <h1>{props.heading}</h1>
-          <p>{props.paragraph}</p>
-          <p>{props.paragraph2}</p>
-          <div>
-            <p onClick={props.action}>Log In</p>
-          </div>
+class FrontPage extends Component{
+
+    componentDidMount() {
+         fetch('/user', {credentials: 'include'}).then((response) => {
+            response.json().then(body => {
+                if (body.username) {
+                    this.props.history.push('/home');
+                }
+            });
+        });
+    }
+
+    render() {
+
+        return(
+
+            <div>
+                <NavBar />
+
+                <br />
+                    <div className="container p-3 m-md-3 position-relative overflow-hidden ">
+                          <h1 className="display-4 font-weight-bold purple-text">RunNErrand</h1>
+                            <br />
+                          <p className="lead font-weight-normal">Find someone to do your random or every tasks!</p>
+                          <Link to="/login"><Button className="purple-btn font-weight-bold px-5" >Lets Go</Button></Link>
+
+                    </div>
+
+
+            </div>
         );
-  </div>
-)
-const Section = () => {
-    return (
-        <section>
-            <Welcome heading="Welcome" 
-                paragraph="Congrats! You have successfully signed up! An email has been sent to you. Please check and verify your email address! Welcome to RunNErrand!" 
-                paragraph2 = "Now you can go back to Login!"
-                action={ () => { alert("See what I mean? Javascript is fun!") } }
-            />
-        </section>
-    )
+    }
 }
 
-ReactDOM.render(<Section />, document.querySelector("#app"))
+export default FrontPage;
 
 
-export default Welcome;
