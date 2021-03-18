@@ -1,35 +1,42 @@
-// import logo from './logo.svg';
 import './App.css';
+// import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+import Welcome from './Welcome';
+import Login from './Login';
+import ResetPassword from './ResetPassword';
 import Profile from './ProfilePage/Profile'
-import AccountDetails from './ProfilePage/AccountDetails'
-import PaymentMethod from './ProfilePage/PaymentMethod'
-import React from 'react'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import NavBar from './Navbar';
+import Signup from './Signup'
 
-
-function App() {
+const App = (props)=> {
   return (
-    <>
-      <div className="main">
-        <Router>
-          <Switch>
-            <Route path = "/">
-              <Profile username={"zijiahu"}></Profile>
-            </Route>
+    <Router>
+        <Route exact path="/" >
+          <Welcome />
+          </Route>
+        
+        <Route exact path="/Login" >
+          <NavBar />
+          <Login />
+          </Route>
 
-            <Route path = "/">
-              <AccountDetails username ={"zijiahu"}></AccountDetails>
-            </Route>
+        <Route exact path="/Signup" >
+          <NavBar />
+          <Signup />
+          </Route>  
 
-            <Route path = "/">
-              <PaymentMethod> </PaymentMethod>
-            </Route>
-          </Switch>
-        </Router>
-      </div>
-    </>
-  )
-}
+        <Route exact path="/Profile" >
+          <NavBar />
+          <Profile />
+        </Route>
 
-export default App
+        <Route exact path="/reset" >
+          <NavBar />
+          <ResetPassword />
+          </Route>
+
+      </Router>
+    )
+  }
+
+export default App;
