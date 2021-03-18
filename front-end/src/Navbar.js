@@ -50,7 +50,7 @@ class NavBar extends Component {
                 <Navbar.Collapse className="justify-content-end">
 
                     <ButtonGroup className="mr-2">
-                        <Link to="/"><Button variant="outline-light">Home</Button></Link>
+                        <Link to="/Home"><Button variant="outline-light">Home</Button></Link>
                     </ButtonGroup>
 
                     <ButtonGroup className="mr-2">
@@ -62,7 +62,7 @@ class NavBar extends Component {
                     </ButtonGroup>
 
                     <ButtonGroup className="mr-2">
-                        <Link to="/profile"><Button variant="outline-light">Profile</Button></Link>
+                    <Link to="/ProfilePage/profile"><Button variant="outline-light">Profile</Button></Link>
                     </ButtonGroup>
 
                     <ButtonGroup className="mr-2">

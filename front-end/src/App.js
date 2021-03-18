@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Welcome from './Welcome';
 import Login from './Login';
+import Home from './Home';
 import ResetPassword from './ResetPassword';
 import Profile from './ProfilePage/Profile'
 import NavBar from './Navbar';
@@ -15,6 +16,11 @@ const App = (props)=> {
           <Welcome />
           </Route>
         
+        <Route exact path="/Home" >
+          <NavBar />
+          <Home />
+          </Route>
+
         <Route exact path="/Login" >
           <NavBar />
           <Login />
