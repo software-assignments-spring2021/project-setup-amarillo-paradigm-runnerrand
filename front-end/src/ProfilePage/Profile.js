@@ -24,9 +24,7 @@ const Profile = (props) =>{
 
 const handleAccountDetail = ()=>{
     // redirect to account detail page
-    return(
-        <Link to="./AccountDetails"></Link>
-    )
+
 }
 
 const handlePaymentMethod = ()=>{

@@ -25,7 +25,7 @@ const App = (props)=> {
           <Signup />
           </Route>  
 
-        <Route exact path="/Profile" >
+        <Route exact path="/ProfilePage/Profile" >
           <NavBar />
           <Profile />
         </Route>
