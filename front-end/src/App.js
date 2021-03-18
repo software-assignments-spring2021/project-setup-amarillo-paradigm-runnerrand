@@ -1,41 +1,15 @@
-// import logo from './logo.svg';
 import './App.css';
-import Profile from './ProfilePage/Profile'
-import AccountDetails from './ProfilePage/AccountDetails'
-import ResetPassword from './ResetPassword'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Welcome from './Welcome';
+import Login from './Login';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Profile username={"zijiahu"}> Hello</Profile>
-        {/* <p> Hello </p> */}
-      </header>
-    </div>
+    <Router>
+      <Route exact path="/" component={Welcome} />
+      <Route exact path="/login" component={Login} />
+    </Router>
   );
-}
-
-function Account(){
-  return(
-  <div className="Account">
-    <header className="App-header">
-      {/* <img src={logo} className="App-logo" alt="logo" /> */}
-      <AccountDetails username ={"zijiahu"}>Hello</AccountDetails>
-      {/* <p> Hello </p> */}
-      </header>
-    </div>
-  );
-}
-
-function PasswordReset(){
-  return(
-    <div className="PasswordReset">
-      <header className="App-header">
-        <ResetPassword>reset</ResetPassword>
-      </header>
-    </div>
-  )
 }
 
 export default PasswordReset;
