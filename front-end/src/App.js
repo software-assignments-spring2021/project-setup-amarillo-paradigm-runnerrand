@@ -24,11 +24,10 @@ const App = (props)=> {
           <Profile />
         </Route>
 
-        {/* <Route exact path="/reset" >
+        <Route exact path="/reset" >
           <NavBar />
           <ResetPassword />
-          </Route> */}
-
+          </Route>
 
       </Router>
     )
