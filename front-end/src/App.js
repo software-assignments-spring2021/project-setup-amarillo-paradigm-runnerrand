@@ -1,15 +1,37 @@
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Welcome from './Welcome';
 import Login from './Login';
+import ResetPassword from './ResetPassword';
+import Profile from './Profile'
+import NavBar from './Navbar';
 
-function App() {
+const App = (props)=> {
   return (
     <Router>
-      <Route exact path="/" component={Welcome} />
-      <Route exact path="/login" component={Login} />
-    </Router>
-  );
-}
+        <Route exact path="/" >
+          <Welcome />
+          </Route>
+        
+        <Route exact path="/Login" >
+          <NavBar />
+          <Login />
+          </Route>
 
-export default PasswordReset;
+        <Route exact path="/Profile" >
+          <NavBar />
+          <Profile />
+        </Route>
+
+        {/* <Route exact path="/reset" >
+          <NavBar />
+          <ResetPassword />
+          </Route> */}
+
+
+      </Router>
+    )
+  }
+
+export default App;
