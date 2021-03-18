@@ -69,7 +69,7 @@ class NavBar extends Component {
                         <Link to="/login"><Button variant="outline-light">Login</Button></Link>
                     </ButtonGroup>
                     <ButtonGroup className="mr-2">
-                        <Link to="/register"><Button variant="outline-light">Signup</Button></Link>
+                        <Link to="/signup"><Button variant="outline-light">Signup</Button></Link>
                     </ButtonGroup>
                 </Navbar.Collapse>}
             </Navbar>
