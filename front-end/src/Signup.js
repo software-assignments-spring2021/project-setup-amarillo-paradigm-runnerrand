@@ -1,4 +1,4 @@
-import './Login.css';
+import './Signup.css';
 import React, { Component } from "react";
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
-class Login extends Component {
+class Signup extends Component {
 
     constructor(props) {
         super(props);
@@ -27,7 +27,7 @@ class Login extends Component {
     }
 
     submit() {
-        fetch('/login', {
+        fetch('/signup', {
            method: "POST",
             headers: {
                 'Content-type': 'application/json'
@@ -44,14 +44,14 @@ class Login extends Component {
                     <Navbar.Brand onClick={(e) => {this.props.history.push('/')}} href="javascript:void(0)">RunNErrand</Navbar.Brand>
                 </Navbar>
                 
-                <div className="login">
+                <div className="signup">
                     <div className="form">
-                        <form className="login-form" onSubmit={(e) => { this.submit(); e.preventDefault(); }}>
+                        <form className="signup-form" onSubmit={(e) => { this.submit(); e.preventDefault(); }}>
                             <div className="error">{this.state.errorMsg}</div>
                             <input autoFocus={true} type="email" name="username" placeholder="email" value={this.state.email} onChange={this.handleChange} required/>
+                            <p></p>
                             <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} required />
-                            <button type="submit">login</button>
-                            <p className="message">Not registered? <Link to="/signup">Create an account</Link></p>
+                            <button type="submit">signup</button>
                         </form>
                     </div>
                 </div>
@@ -59,5 +59,5 @@ class Login extends Component {
         );
     }
 }
-export default Login;
+export default Signup;
 

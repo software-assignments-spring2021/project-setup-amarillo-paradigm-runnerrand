@@ -6,6 +6,7 @@ import Login from './Login';
 import ResetPassword from './ResetPassword';
 import Profile from './Profile'
 import NavBar from './Navbar';
+import Signup from './Signup'
 
 const App = (props)=> {
   return (
@@ -18,6 +19,11 @@ const App = (props)=> {
           <NavBar />
           <Login />
           </Route>
+
+        <Route exact path="/Signup" >
+          <NavBar />
+          <Signup />
+          </Route>  
 
         <Route exact path="/Profile" >
           <NavBar />
