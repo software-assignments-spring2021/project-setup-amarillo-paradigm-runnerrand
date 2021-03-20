@@ -12,6 +12,7 @@ const accountDetails = (props) => {
     }
     return(
         <section>
+            <button onClick={handleGoBack}> Go Back </button>
             <h1 className="title">Account Details</h1>
             <hr></hr>
             <section class="accountDetails">
@@ -42,6 +43,11 @@ const handleProfilePhoto = (props) =>{
 
 const handleEditDetails=(props)=>{
     // redirect to account details editing page
+}
+
+const handleGoBack=(props)=>{
+    // redirect to the previous profile page
+    window.location.href = '../Profile'
 }
 
 export default accountDetails;

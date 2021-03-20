@@ -4,6 +4,9 @@ import './PasswordResetConfirmation'
 const ResetPassword=(props)=>{
     return (
     <div>   
+        <button onClick={handleGoBack}> Go Back </button>
+        <h1 className="title">Reset Password</h1>
+        <hr></hr>
         <h>
             <p></p>
             <form old = {handleOld}>
@@ -52,5 +55,8 @@ const handleSave = ()=>{
     window.location.href = './PasswordResetConfirmation'
 }
 
+const handleGoBack = () =>{
+    window.location.href = '../Profile'
+}
 
 export default ResetPassword;
