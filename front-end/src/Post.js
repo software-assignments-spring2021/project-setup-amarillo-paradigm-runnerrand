@@ -8,14 +8,26 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
-const Post = (props) =>{
-    return(
-        <section className="post">
-            <p></p>
+const Post = () =>{
+    return (
+        <section>
+            <button onClick={handleGoBack}> Go Back </button>
+            <h1 className="title">Payment Method</h1>
+            <hr></hr>
+
+            <p className="item">Credit Card Type: </p>
+            
+
+            <br></br>
+            
+            
         </section>
     )
 }
 
+const handleGoBack =() =>{
+    window.location.href = '../'
+}
 
 
 export default Post
