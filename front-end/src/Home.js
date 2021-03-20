@@ -2,7 +2,9 @@ import './Home.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import tutoring  from './HomePagePic/Tutoring.png'
-
+import assembly  from './HomePagePic/Assembly.png'
+import shopping  from './HomePagePic/Shopping.png'
+import volunteering  from './HomePagePic/Volunteering.png'
 const Home = () => {
     return(
       <div>
@@ -25,20 +27,26 @@ const Home = () => {
             <p>Number of Tasks: 20</p>
         </div>
         <p></p>
+
         <div className = "catogoryDetail">
             <h1>Assembly</h1>
+            <img src={assembly} className="homePagePic"/>
             <p>Price Range: $20 - $50</p>
             <p>Number of Tasks: 20</p>
         </div>
         <p></p>
+        
         <div className = "catogoryDetail">
             <h1>Shopping</h1>
+            <img src={shopping} className="homePagePic"/>
             <p>Price Range: $20 - $50</p>
             <p>Number of Tasks: 20</p>
         </div>
         <p></p>
+        
         <div className = "catogoryDetail">
             <h1>Volunteering</h1>
+            <img src={volunteering} className="homePagePic"/>
             <p>Price Range: $20 - $50</p>
             <p>Number of Tasks: 20</p>
         </div>
