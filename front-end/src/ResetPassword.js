@@ -1,9 +1,11 @@
 import './ResetPassword.css';
+import './PasswordResetConfirmation'
 
 const ResetPassword=(props)=>{
     return (
     <div>   
         <h>
+            <p></p>
             <form old = {handleOld}>
                 <label>
                     Old Password: 
@@ -24,6 +26,7 @@ const ResetPassword=(props)=>{
                     <input type="text"/>
                 </label>
             </form>
+
             <p></p>
             <button onClick={handleSave}>Save</button>
             
@@ -45,7 +48,8 @@ const handleRetype = ()=>{
 }
 
 const handleSave = ()=>{
-    //redirect to main page
+    //redirect to confirmation page
+    window.location.href = './PasswordResetConfirmation'
 }
 
 
