@@ -9,6 +9,7 @@ const cardTypes = [
 const PaymentMethod = () =>{
     return (
         <section>
+            <button onClick={handleGoBack}> Go Back </button>
             <h1 className="title">Payment Method</h1>
             <hr></hr>
 
@@ -60,6 +61,10 @@ const handleSave =()=>{
 
 const handleCancel =()=>{
     // do not save
+}
+
+const handleGoBack =() =>{
+    window.location.href = '../Profile'
 }
 
 export default PaymentMethod
