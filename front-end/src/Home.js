@@ -1,7 +1,7 @@
 import './Home.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import TutoringPic  from './src/HomePagePic/Tutoring'
+//import TutoringPic  from './HomePagePic/Tutoring'
 
 const Home = () => {
     return(
@@ -17,9 +17,29 @@ const Home = () => {
 
             <p></p>
         </div>
-        <div>
-            <h1>Search by Catogories: </h1>
-            <TutoringPic></TutoringPic>
+        <h1>Search by Catogories:</h1>
+        <div className = "catogoryDetail">
+            <h1>Tutoring</h1>
+            <p>Price Range: $20 - $50</p>
+            <p>Number of Tasks: 20</p>
+        </div>
+        <p></p>
+        <div className = "catogoryDetail">
+            <h1>Assembly</h1>
+            <p>Price Range: $20 - $50</p>
+            <p>Number of Tasks: 20</p>
+        </div>
+        <p></p>
+        <div className = "catogoryDetail">
+            <h1>Shopping</h1>
+            <p>Price Range: $20 - $50</p>
+            <p>Number of Tasks: 20</p>
+        </div>
+        <p></p>
+        <div className = "catogoryDetail">
+            <h1>Volunteering</h1>
+            <p>Price Range: $20 - $50</p>
+            <p>Number of Tasks: 20</p>
         </div>
      </div>
     );
