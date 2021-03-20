@@ -1,7 +1,7 @@
 import './Home.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
-//import TutoringPic  from './HomePagePic/Tutoring'
+import tutoring  from './HomePagePic/Tutoring.png'
 
 const Home = () => {
     return(
@@ -20,6 +20,7 @@ const Home = () => {
         <h1>Search by Catogories:</h1>
         <div className = "catogoryDetail">
             <h1>Tutoring</h1>
+            <img src={tutoring} className="homePagePic"/>
             <p>Price Range: $20 - $50</p>
             <p>Number of Tasks: 20</p>
         </div>
