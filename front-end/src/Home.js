@@ -1,6 +1,8 @@
 import './Home.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import TutoringPic  from './src/HomePagePic/Tutoring'
+
 const Home = () => {
     return(
       <div>
@@ -17,7 +19,7 @@ const Home = () => {
         </div>
         <div>
             <h1>Search by Catogories: </h1>
-          
+            <TutoringPic></TutoringPic>
         </div>
      </div>
     );
