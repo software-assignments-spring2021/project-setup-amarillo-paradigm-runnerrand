@@ -12,15 +12,33 @@ const Post = () =>{
     return (
         <section>
             <button onClick={handleGoBack}> Go Back </button>
-            <h1 className="title">Payment Method</h1>
+            <h1 className="title">Post Tasks</h1>
             <hr></hr>
 
-            <p className="item">Credit Card Type: </p>
-            
+            <br></br>
+            <label for="Task Title" className="item">Task Title:</label><br></br>
+            <input type="text" id="tasktitle"/> <br></br>
 
             <br></br>
-            
-            
+            <label for="Adsress" className="item">Address:</label><br></br>
+            <input type="text" id="address"/> <br></br>
+
+            <br></br>
+            <label for="Task Title" className="item">Due Date:</label><br></br>
+            <input type="text" id="duedate"/> <br></br>
+
+            <br></br>
+            <label for="Task Title" className="item">Budget:</label><br></br>
+            <input type="text" id="budget"/> <br></br>
+
+            <br></br>
+            <label for="Task Title" className="item">Contact:</label><br></br>
+            <input type="text" id="contact"/> <br></br>
+
+            <br></br>
+            <label for="details" className="item">Details:</label><br></br>
+            <input type="text" id="details"/> <br></br>
+
         </section>
     )
 }
@@ -28,6 +46,8 @@ const Post = () =>{
 const handleGoBack =() =>{
     window.location.href = '../'
 }
+
+
 
 
 export default Post
