@@ -12,6 +12,8 @@ import Post from './Post'
 import ResetPassword from './ResetPassword'
 import PaymentMethod from './PaymentMethod';
 import PasswordResetConfirmation from './PasswordResetConfirmation'
+import TaskList from './TaskList'
+import TaskDetails from './TaskDatails'
 
 const App = (props)=> {
   return (
@@ -24,6 +26,16 @@ const App = (props)=> {
           <NavBar />
           <Home />
           </Route>
+
+          <Route exact path="/TaskList" >
+          <NavBar />
+          <TaskList />
+        </Route>
+
+        <Route exact path="/TaskDetails" >
+          <NavBar />
+          <TaskDetails />
+        </Route>
 
         <Route exact path="/Login" >
           <NavBar />
