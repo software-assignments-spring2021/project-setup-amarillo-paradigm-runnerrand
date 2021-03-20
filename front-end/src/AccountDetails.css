@@ -1,29 +1,23 @@
-.AccountDetails {
-    background-color: #282c34;
+
+.accountDetails{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
+    font-family: geogia;
 }
 
-.AccountDetails:hover {
-    /* background-color: black; */
-    background-color: white;
-    color: #909090;
-}
-
-username {
+#username {
+    color: black;
     font-size: 20px;
     font-family: georgia;
-    color: white;
-
+    font-size: 15px;
+    text-align: center;
 }
 
-button {
-    /* background-color: #909090; */
+.button {
     background-color: white;
     font-family: georgia;
     color: black;
@@ -32,8 +26,7 @@ button {
     padding: 10px;
 }
 
-button:hover {
-    /* background-color: #909090; */
+.button:hover {
     background-color: #909090;
     font-family: georgia;
     color: black;
