@@ -51,6 +51,7 @@ class Signup extends Component {
                             <input autoFocus={true} type="email" name="username" placeholder="email" value={this.state.email} onChange={this.handleChange} required/>
                             <p></p>
                             <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} required />
+                            <p></p>
                             <button type="submit">signup</button>
                         </form>
                     </div>
