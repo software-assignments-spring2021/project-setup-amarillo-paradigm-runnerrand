@@ -30,7 +30,7 @@ const App = (props)=> {
           <Signup />
           </Route>  
 
-        <Route exact path="/ProfilePage/Profile" >
+        <Route exact path="/Profile" >
           <NavBar />
           <Profile />
         </Route>
