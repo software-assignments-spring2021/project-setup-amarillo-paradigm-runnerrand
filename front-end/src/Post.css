@@ -1,6 +1,6 @@
 #tasktitle {
     padding: 14px 10px 14px;
-    width: 100%;
+    width: 33%;
     background-color: #fcfcfc;
     border: 1px solid #00000033;
     outline: none;
@@ -9,9 +9,45 @@
     border-radius: 3px;
     color: #333;
 }
-#drpdwnmenu{
+#drpdwn{
     color: black;
-    font-weight: bold;
-    
+    text-align:center;
+    width:16.5%;
+    border: 1px solid #00000033;
     background-color: white;
+    transition: 0.15s;
+    border-radius: 3px;
+    outline: none;
+    /*padding: 14px 10px 14px;*/
+    
+}
+
+
+
+
+
+
+#textbar{
+    padding: 14px 10px 14px;
+    width: 33%;
+    background-color: #fcfcfc;
+    border: 1px solid #00000033;
+    outline: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border-radius: 3px;
+    color: #333;
+}
+
+#textarea{
+    padding: 14px 10px 14px;
+    width: 66%;
+    height: 150px;
+    background-color: #fcfcfc;
+    border: 1px solid #00000033;
+    outline: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border-radius: 3px;
+    color: #333;
 }
