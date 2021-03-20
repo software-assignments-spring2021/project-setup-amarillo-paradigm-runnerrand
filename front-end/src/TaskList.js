@@ -9,28 +9,31 @@ const TaskList =  () => {
 
       <div className = "taskTitle">
             <h1>Task1</h1>
-            <p>Click for more details</p>
+            <p onClick={handleTaskDetails}>Click for more details</p>
       </div>
       <div className = "taskTitle">
             <h1>Task2</h1>
-            <p>Click for more details</p>
+            <p onClick={handleTaskDetails}>Click for more details</p>
       </div>
       <div className = "taskTitle">
             <h1>Task3</h1>
-            <p>Click for more details</p>
+            <p onClick={handleTaskDetails}>Click for more details</p>
       </div>
       <div className = "taskTitle">
             <h1>Task4</h1>
-            <p>Click for more details</p>
+            <p onClick={handleTaskDetails}>Click for more details</p>
       </div>
       <div className = "taskTitle">
             <h1>Task5</h1>
-            <p>Click for more details</p>
+            <p onClick={handleTaskDetails}>Click for more details</p>
       </div>
 
       </div>
   )
 }
     
+const handleTaskDetails = ()=>{
+      window.location.href = './TaskDetails';
+  }
 
 export default TaskList;
