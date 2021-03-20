@@ -8,6 +8,7 @@ import Profile from './Profile';
 import AccountDetails from './AccountDetails';
 import NavBar from './Navbar';
 import Signup from './Signup'
+import Post from './Post'
 import ResetPassword from './ResetPassword'
 import PaymentMethod from './PaymentMethod';
 import PasswordResetConfirmation from './PasswordResetConfirmation'
@@ -57,6 +58,11 @@ const App = (props)=> {
         <Route exact path="/PasswordResetConfirmation" >
           <NavBar />
           <PasswordResetConfirmation />
+        </Route>
+
+        <Route exact path="/Post" >
+          <NavBar />
+          <Post />
         </Route>
 
       </Router>
