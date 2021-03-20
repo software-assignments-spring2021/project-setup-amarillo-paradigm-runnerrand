@@ -49,7 +49,9 @@ class Login extends Component {
                         <form className="login-form" onSubmit={(e) => { this.submit(); e.preventDefault(); }}>
                             <div className="error">{this.state.errorMsg}</div>
                             <input autoFocus={true} type="email" name="username" placeholder="email" value={this.state.email} onChange={this.handleChange} required/>
+                            <p></p>
                             <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} required />
+                            <p></p>
                             <button type="submit">login</button>
                             <p className="message">Not registered? <Link to="/signup">Create an account</Link></p>
                         </form>
