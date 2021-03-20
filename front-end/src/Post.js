@@ -1,5 +1,7 @@
 import './Post.css';
 import React, { Component } from "react";
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -17,7 +19,24 @@ const Post = () =>{
 
             <br></br>
             <label for="Task Title" className="item">Task Title:</label><br></br>
-            <input type="text" id="tasktitle"/> <br></br>
+            <input type="text" id="tasktitle" placeholder='this page is unfinished' /> <br></br>
+
+            <br></br>
+            <label for="Category" className="item">Category:</label><br></br>
+            <DropdownButton id="drpdwnmenu" title="category menu in progress, unfinished">
+            <Dropdown.Item href="#/action-1">In progress</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">In progress</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">In progress</Dropdown.Item>
+            </DropdownButton>
+
+            <br></br>
+            <label for="Category" className="item">Campus:</label><br></br>
+            <DropdownButton id="drpdwnmenu" title="Campus menu in progress, unfinished">
+            <Dropdown.Item href="#/action-1">In progress</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">In progress</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">In progress</Dropdown.Item>
+            </DropdownButton>
+            
 
             <br></br>
             <label for="Adsress" className="item">Address:</label><br></br>
@@ -38,6 +57,8 @@ const Post = () =>{
             <br></br>
             <label for="details" className="item">Details:</label><br></br>
             <input type="text" id="details"/> <br></br>
+
+            
 
         </section>
     )
