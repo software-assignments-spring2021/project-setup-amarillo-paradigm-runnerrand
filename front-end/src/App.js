@@ -4,8 +4,7 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Welcome from './Welcome';
 import Login from './Login';
 import Home from './Home';
-import ResetPassword from './ResetPassword';
-import Profile from './ProfilePage/Profile'
+import Profile from './Profile'
 import NavBar from './Navbar';
 import Signup from './Signup'
 
@@ -35,11 +34,6 @@ const App = (props)=> {
           <NavBar />
           <Profile />
         </Route>
-
-        <Route exact path="/reset" >
-          <NavBar />
-          <ResetPassword />
-          </Route>
 
       </Router>
     )
