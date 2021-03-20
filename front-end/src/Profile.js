@@ -24,6 +24,7 @@ const Profile = (props) =>{
 
 const handleAccountDetail = ()=>{
     // redirect to account detail page
+    window.location.href = './AccountDetails';
 
 }
 
