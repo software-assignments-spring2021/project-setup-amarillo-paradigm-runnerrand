@@ -2,6 +2,7 @@ import './Post.css';
 import React, { Component } from "react";
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
+import SplitButton from 'react-bootstrap/SplitButton'
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -19,44 +20,50 @@ const Post = () =>{
 
             <br></br>
             <label for="Task Title" className="item">Task Title:</label><br></br>
-            <input type="text" id="tasktitle" placeholder='this page is unfinished' /> <br></br>
+            <input type="text" id="tasktitle" placeholder='' /> <br></br>
 
             <br></br>
             <label for="Category" className="item">Category:</label><br></br>
-            <DropdownButton id="drpdwnmenu" title="category menu in progress, unfinished">
-            <Dropdown.Item href="#/action-1">In progress</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">In progress</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">In progress</Dropdown.Item>
+           
+            <DropdownButton id="drpdwn" title="select a task categoty">
+            <Dropdown.Item href="#/action-1">Tutoring</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Assembly</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">......</Dropdown.Item>
             </DropdownButton>
-
+           
             <br></br>
-            <label for="Category" className="item">Campus:</label><br></br>
-            <DropdownButton id="drpdwnmenu" title="Campus menu in progress, unfinished">
-            <Dropdown.Item href="#/action-1">In progress</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">In progress</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">In progress</Dropdown.Item>
-            </DropdownButton>
+            
             
 
+            <label for="Category" className="item">Campus:</label><br></br>
+           
+            <DropdownButton id="drpdwn" title="select a campus">
+            <Dropdown.Item href="#/action-1">Manhattan</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Brooklyn</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">......</Dropdown.Item>
+            </DropdownButton>
             <br></br>
+
+
+           
             <label for="Adsress" className="item">Address:</label><br></br>
-            <input type="text" id="address"/> <br></br>
+            <input type="text" id="textbar"/> <br></br>
 
             <br></br>
             <label for="Task Title" className="item">Due Date:</label><br></br>
-            <input type="text" id="duedate"/> <br></br>
+            <input type="text" id="textbar"/> <br></br>
 
             <br></br>
             <label for="Task Title" className="item">Budget:</label><br></br>
-            <input type="text" id="budget"/> <br></br>
+            <input type="text" id="textbar"/> <br></br>
 
             <br></br>
             <label for="Task Title" className="item">Contact:</label><br></br>
-            <input type="text" id="contact"/> <br></br>
+            <input type="text" id="textbar"/> <br></br>
 
             <br></br>
             <label for="details" className="item">Details:</label><br></br>
-            <input type="text" id="details"/> <br></br>
+            <textarea type="text" id="textarea"/> <br></br>
 
             
 
