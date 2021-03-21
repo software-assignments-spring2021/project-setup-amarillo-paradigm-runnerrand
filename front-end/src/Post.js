@@ -65,6 +65,10 @@ const Post = () =>{
             <label for="details" className="item">Details:</label><br></br>
             <textarea type="text" id="textarea"/> <br></br>
 
+            <div>
+                <button onClick={handlePostButton}>Post</button> 
+                <button onClick={handleCancelButtion}>Cancel</button>
+            </div>
             
 
         </section>
@@ -73,6 +77,14 @@ const Post = () =>{
 
 const handleGoBack =() =>{
     window.location.href = '../'
+}
+
+const handlePostButton = ()=>{
+    window.location.href = '../PostConfirmation';
+
+}
+const handleCancelButtion = ()=>{
+    window.location.href = '../post';
 }
 
 
