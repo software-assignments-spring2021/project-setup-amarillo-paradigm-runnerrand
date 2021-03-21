@@ -15,7 +15,20 @@ import PasswordResetConfirmation from './PasswordResetConfirmation'
 import TaskList from './TaskList'
 import TaskDetails from './TaskDatails'
 import PostConfirmation from './PostConfirmation'
-import PaymentConfirmation from './PaymentConfirmation'
+import TaskListGen from './TaskListGen'
+import TaskBrowser from './TaskBrowser'
+
+
+const TaskWrapper = ({ match }) => {
+  return (
+    <>
+      <NavBar />
+      <TaskBrowser taskId={match.params.id} />
+    </>
+  )
+}
+
+
 
 const App = (props)=> {
   return (
@@ -33,6 +46,15 @@ const App = (props)=> {
           <NavBar />
           <TaskList />
         </Route>
+
+
+          <Route path="/tasks/:id" component={TaskWrapper} />
+
+          <Route path="/tasks">
+            <NavBar />
+            <TaskListGen />
+          </Route>
+
 
         <Route exact path="/TaskDetails" >
           <NavBar />
@@ -82,11 +104,6 @@ const App = (props)=> {
         <Route exact path="/Post" >
           <NavBar />
           <Post />
-        </Route>
-
-        <Route exact path="/PaymentConfirmation" >
-          <NavBar />
-          <PaymentConfirmation />
         </Route>
 
       </Router>

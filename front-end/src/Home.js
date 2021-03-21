@@ -1,15 +1,27 @@
 import './Home.css'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
 import tutoring  from './HomePagePic/Tutoring.png'
 import assembly  from './HomePagePic/Assembly.png'
 import shopping  from './HomePagePic/Shopping.png'
 import volunteering  from './HomePagePic/Volunteering.png'
-const Home = () => {
-    const catogoryDetail ={
-        priceRange: "null",
-        taskNumber : "null"
-    }
+import TaskPreview from './TaskPreview'
+const Home = (props) => {
+    // start a state varaible with a blank array
+    const [data, setData] = useState([])
+  
+    useEffect(() => {
+      console.log('fetching data')
+      axios('http://104.131.170.212:3333/posts')
+        .then((response) => {
+          setData(response.data)
+        })
+        .catch((err) => {
+          console.log(`Error with fetching server data, defaulting to backup data`)
+  
+        })
+    }, []) 
     return(
       <div>
         <div className="searchBar">
@@ -23,36 +35,12 @@ const Home = () => {
 
             <p></p>
         </div>
-        <h1>Search by Catogories:</h1>
-        <div className = "catogoryDetail">
-            <h1 onClick={handleCatogories}>Tutoring</h1>
-            <img src={tutoring} className="homePagePic"/>
-            <p>Price Range: {catogoryDetail.priceRange}</p>
-            <p>Number of Tasks: {catogoryDetail.taskNumber}</p>
-        </div>
-        <p></p>
-        <div className = "catogoryDetail">
-            <h1 onClick={handleCatogories}>Assembly</h1>
-            <img src={assembly} className="homePagePic"/>
-            <p>Price Range: {catogoryDetail.priceRange}</p>
-            <p>Number of Tasks: {catogoryDetail.taskNumber}</p>
-        </div>
-        <p></p>
-        
-        <div className = "catogoryDetail">
-            <h1 onClick={handleCatogories}>Shopping</h1>
-            <img src={shopping} className="homePagePic"/>
-            <p>Price Range: {catogoryDetail.priceRange}</p>
-            <p>Number of Tasks: {catogoryDetail.taskNumber}</p>
-        </div>
-        <p></p>
-        
-        <div className = "catogoryDetail">
-            <h1 onClick={handleCatogories}>Volunteering</h1>
-            <img src={volunteering} className="homePagePic"/>
-            <p>Price Range: {catogoryDetail.priceRange}</p>
-            <p>Number of Tasks: {catogoryDetail.taskNumber}</p>
-        </div>
+        <h1>Current Active Tasks:</h1>
+        <section className="tasks">
+        {data.map((item) => (
+          <TaskPreview key={item.id} details={item} />          
+        ))}
+      </section>
      </div>
     );
    }
