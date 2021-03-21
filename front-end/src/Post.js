@@ -1,4 +1,5 @@
 import './Post.css';
+import './Home'
 import React, { Component } from "react";
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -84,7 +85,7 @@ const handlePostButton = ()=>{
 
 }
 const handleCancelButtion = ()=>{
-    window.location.href = '../post';
+    window.location.href = '../Home';
 }
 
 
