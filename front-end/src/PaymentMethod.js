@@ -43,8 +43,8 @@ const PaymentMethod = () =>{
             <input type="text" className="smallBox"/>
 
             <br></br><br></br>
-            <button onClick="handleSave"> Save</button>
-            <button onClick="handleCancel"> Cancel</button>
+            <button onClick={handleSave}> Save</button>
+            <button onClick={handleCancel}> Cancel</button>
 
         </section>
     )
@@ -57,14 +57,17 @@ const display = (name) =>{
 }
 const handleSave =()=>{
     // save all the information
+    window.location.href = './PaymentConfirmation'
 }
 
 const handleCancel =()=>{
     // do not save
+    window.location.href = './Profile'
+    
 }
 
 const handleGoBack =() =>{
-    window.location.href = '../Profile'
+    window.location.href = './Profile'
 }
 
 export default PaymentMethod

@@ -15,6 +15,7 @@ import PasswordResetConfirmation from './PasswordResetConfirmation'
 import TaskList from './TaskList'
 import TaskDetails from './TaskDatails'
 import PostConfirmation from './PostConfirmation'
+import PaymentConfirmation from './PaymentConfirmation'
 
 const App = (props)=> {
   return (
@@ -81,6 +82,11 @@ const App = (props)=> {
         <Route exact path="/Post" >
           <NavBar />
           <Post />
+        </Route>
+
+        <Route exact path="/PaymentConfirmation" >
+          <NavBar />
+          <PaymentConfirmation />
         </Route>
 
       </Router>
