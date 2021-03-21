@@ -40,20 +40,18 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <Navbar  variant="dark" className="navbar-custom">
-                    <Navbar.Brand onClick={(e) => {this.props.history.push('/')}} href="javascript:void(0)">RunNErrand</Navbar.Brand>
-                </Navbar>
                 
                 <div className="login">
+		    <br />
                     <div className="form">
-                        <form className="login-form" onSubmit={(e) => { this.submit(); e.preventDefault(); }}>
+		        <form className="login-form" onSubmit={(e) => { this.submit(); e.preventDefault(); }}>
                             <div className="error">{this.state.errorMsg}</div>
-                            <input autoFocus={true} type="email" name="username" placeholder="email" value={this.state.email} onChange={this.handleChange} required/>
+                            <input autoFocus={true} type="email" name="username" placeholder="Email Address" value={this.state.email} onChange={this.handleChange} required/>
                             <p></p>
-                            <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.handleChange} required />
+                            <input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} required />
                             <p></p>
-                            <button type="submit">login</button>
-                            <p className="message">Not registered? <Link to="/signup">Create an account</Link></p>
+                            <button type="submit">Login</button>
+                            <p className="message">Not registered? <Link to="/signup">Sign Up</Link></p>
                         </form>
                     </div>
                 </div>
