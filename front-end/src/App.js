@@ -17,6 +17,7 @@ import TaskDetails from './TaskDatails'
 import PostConfirmation from './PostConfirmation'
 import TaskListGen from './TaskListGen'
 import TaskBrowser from './TaskBrowser'
+import MyTasks from './MyTasks'
 
 
 const TaskWrapper = ({ match }) => {
@@ -51,7 +52,6 @@ const App = (props)=> {
           <Route path="/tasks/:id" component={TaskWrapper} />
 
           <Route path="/tasks">
-            <NavBar />
             <TaskListGen />
           </Route>
 
@@ -84,6 +84,11 @@ const App = (props)=> {
         <Route exact path="/PaymentMethod" >
           <NavBar />
           <PaymentMethod />
+        </Route>
+
+        <Route exact path="/mytasks" >
+          <NavBar />
+          <MyTasks />
         </Route>
 
         <Route exact path="/ResetPassword" >
