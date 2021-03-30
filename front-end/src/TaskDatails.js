@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 const TaskDetails = () =>{
     const taskDetails ={
         taskTitle: "Task No.",
+        taskID: "Task ID",
         taskCategory: "Category Name",
         taskAddress: "Here is the address",
         taskDueDate: "Here is the Due Date",
@@ -17,6 +18,7 @@ const TaskDetails = () =>{
             <div>
                 <h1>Task Details</h1>
                 <p></p>
+                <p><b> Task ID: </b> {taskDetails.ID} </p>
                 <p><b> Task Title: </b> {taskDetails.taskTitle} </p>
 		        <p><b>Category: </b>{taskDetails.taskCategory}</p>
 		        <p><b>Address: </b>{taskDetails.taskAddress}</p>
@@ -38,7 +40,6 @@ const TaskDetails = () =>{
 }
 const handleAcceptButton = ()=>{
     window.location.href = './Home';
-
 }
 
 const handleCancelButtion = ()=>{
