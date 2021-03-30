@@ -35,6 +35,7 @@ const TaskBrowser = (props) => {
         <article className="task" key={data.id}>
           <img alt={data.title} src={imgSrc} />
           <div class="details">
+            <id class="id">{data.taskId}</id> //added task id here 
             <address class="address">{data.country}</address>
             <strong class="price">{data.price}</strong>
             <p>{data.description}</p>
