@@ -158,7 +158,7 @@
         "response": []
       },
       {
-        "name": "Upload one file",
+        "name": "Upload one task",
         "request": {
           "method": "POST",
           "header": [
@@ -172,20 +172,20 @@
             "mode": "formdata",
             "formdata": [
               {
-                "key": "my_files",
-                "type": "file",
+                "key": "my_task",
+                "type": "text",
                 "src": ""
               }
             ]
           },
           "url": {
-            "raw": "http://localhost:3000/upload-example",
+            "raw": "http://localhost:3000/upload-task",
             "protocol": "http",
             "host": ["localhost"],
             "port": "3000",
-            "path": ["upload-example"]
+            "path": ["upload-task"]
           },
-          "description": "Here we use HTTP POST to upload a single file to the server.  Click the 'Body' tab below and select a file to upload.  The server's multer module saves that file for us."
+          "description": "Here we use HTTP POST to upload a single task to the server. The server's multer module saves that for us."
         },
         "response": []
       },
