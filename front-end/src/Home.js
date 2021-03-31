@@ -1,6 +1,9 @@
 import './Home.css'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+// import tasks from 'http://104.131.170.212:3333/posts'
+import Fuse from 'fuse.js'
+
 import { Link } from 'react-router-dom'
 import tutoring  from './HomePagePic/Tutoring.png'
 import assembly  from './HomePagePic/Assembly.png'
@@ -10,6 +13,30 @@ import TaskPreview from './TaskPreview'
 const Home = (props) => {
     // start a state varaible with a blank array
     const [data, setData] = useState([])
+
+    const fuse = new Fuse(data, {
+      keys:[
+        'taskID',
+        'taskTitle',
+        'taskCategory',
+        'taskAddress',
+        'taskDueDate',
+        'taskBudget',
+        'taskContact',
+        'taskRemarks'
+      ],
+      includeScore: true
+    })
+
+    const results = fuse.search(data)
+    const tasksResults = data ? results.map(result => result.item) : data
+
+    function handleOnSearch(currentTarget = {}){
+      const { value } = currentTarget
+      setData(value)
+    }
+    
+    console.log('results', results)
   
     useEffect(() => {
       console.log('fetching data')
@@ -22,6 +49,7 @@ const Home = (props) => {
   
         })
     }, []) 
+
     return(
       <div>
         <div className="searchBar">
@@ -31,13 +59,13 @@ const Home = (props) => {
        
             <p></p>
             <h1>What do you need help for ? </h1>
-            <input type="text" id="JobSearchBar" name="JobSearch" placeholder="Search for jobs"/>
+            <input type="text" id="JobSearchBar" name="JobSearch" placeholder="Search for jobs" value={data} onChange={handleOnSearch}/>
 
             <p></p>
         </div>
         <h1>Current Active Tasks:</h1>
         <section className="tasks">
-        {data.map((item) => (
+        {tasksResults.map((item) => (
           <TaskPreview key={item.id} details={item} />          
         ))}
       </section>
