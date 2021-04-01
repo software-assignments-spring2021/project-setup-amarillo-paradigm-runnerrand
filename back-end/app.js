@@ -2,6 +2,7 @@
 const express = require("express") // CommonJS import style!
 const app = express() // instantiate an Express object
 // we will put some server logic here later...
+const User = require('./User')
 
 
 // use the morgan middleware to log all incoming http requests
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ extended: true })) // decode url-encoded incoming P
 
 // make 'public' directory publicly readable with static content
 app.use("/static", express.static("public"))
+
 
 
 app.get("/", (req, res) => {
@@ -38,19 +40,48 @@ app.post('/post-task', (req, res, next) => {
 })
 
 app.post('/register', (req, res, next) => {
-  const newUser = {
-    status: "success!",
-    message: "congratulations on sending us this data!",
-    data: {
-      username: req.body.username,
-      first: req.body.first,
-      last: req.body.last,
-      email: req.body.email,
-      phone_number: req.body.phone_number,
-      password: req.body.password,
-    },
+  if (req.body.password_confirm !== req.body.password) {
+		return res.status(400).json({error: 'The passwords entered are not the same!'});
   }
-  res.json(newUser)
+  else{
+    const newUser = {
+      status: "success!",
+      message: "congratulations on sending us this data!",
+      data: {
+        username: req.body.username,
+        first: req.body.first,
+        last: req.body.last,
+        email: req.body.email,
+        phone_number: req.body.phone_number,
+        password: req.body.password,
+        passwordconfirm: req.body.password_confirm
+      },
+    }
+    res.json(newUser)
+    console.log(newUser)
+    // User.findOne({ username: req.body.email }).then(user => {
+		// 	if (user) {
+		// 		return res.status(400).json({error: 'An account already exists with that email. Please use a different email.'})
+		// 	} 
+    //   else {
+		// 		User.create(newUser, function(err, user) {
+		// 			if (err) {
+		// 				console.log(err);
+		// 				return res.status(500).json({error: 'Error creating user. Please try again'});
+		// 			} else {
+		// 				console.log('user', user);
+		// 				console.log('Successfully created user');
+		// 				req.logIn(user, function(err) {
+		// 					if (err) {
+		// 					  return res.status(500).json({error: 'Issue with Passport authentication'});
+		// 					}
+		// 					return res.json({success: 'Successfully created user'});
+		// 				});
+		// 			}
+		// 		})
+			// }
+		// })
+  }
 })
 
 app.post('/log-in', (req, res, next) => {

@@ -206,6 +206,11 @@
                 "key": "password",
                 "value": "222",
                 "type": "text"
+              },
+              {
+                "key": "password_confirm",
+                "value": "222",
+                "type": "text"
               }
             ]
           },
