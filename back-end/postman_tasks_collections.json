@@ -158,6 +158,69 @@
         "response": []
       },
       {
+        "name": "Register",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "enctype",
+              "value": "multipart/form-data",
+              "type": "text"
+            },
+            {
+              "key": "",
+              "value": "",
+              "type": "text",
+              "disabled": true
+            }
+          ],
+          "body": {
+            "mode": "urlencoded",
+            "urlencoded": [
+              {
+                "key": "username",
+                "value": "jejeisbadbad",
+                "type": "text"
+              },
+              {
+                "key": "first",
+                "value": "Jessica",
+                "type": "text"
+              },
+              {
+                "key": "last",
+                "value": "Liu",
+                "type": "text"
+              },
+              {
+                "key": "email",
+                "value": "10003",
+                "type": "text"
+              },
+              {
+                "key": "phone_number",
+                "value": "6149887832",
+                "type": "text"
+              },
+              {
+                "key": "password",
+                "value": "222",
+                "type": "text"
+              }
+            ]
+          },
+          "url": {
+            "raw": "http://localhost:3000/register",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["register"]
+          },
+          "description": "Check out the data that is being passed to the server by clicking the 'Body' tab below.  This data is sent to the server via HTTP POST."
+        },
+        "response": []
+      },
+      {
         "name": "Upload one task",
         "request": {
           "method": "POST",

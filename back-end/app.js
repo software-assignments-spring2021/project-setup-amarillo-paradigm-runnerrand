@@ -37,19 +37,35 @@ app.post('/post-task', (req, res, next) => {
   res.json(newTask)
 })
 
-// route for HTTP POST requests for /upload-task
-app.post("/upload-task", (req, res, next) => {
-  // check whether anything was uploaded
-  if (req.task) {
-    // success! send data back to the client, e.g. some JSON data
-    const data = {
-      status: "all good",
-      message: "yup, the files were uploaded!!!",
-      task: req.task,
-    }
-    res.json(data) // send respose
+app.post('/register', (req, res, next) => {
+  const newUser = {
+    status: "success!",
+    message: "congratulations on sending us this data!",
+    data: {
+      username: req.body.username,
+      first: req.body.first,
+      last: req.body.last,
+      email: req.body.email,
+      phone_number: req.body.phone_number,
+      password: req.body.password,
+    },
   }
+  res.json(newUser)
 })
+
+// route for HTTP POST requests for /upload-task
+// app.post("/upload-task", (req, res, next) => {
+//   // check whether anything was uploaded
+//   if (req.task) {
+//     // success! send data back to the client, e.g. some JSON data
+//     const data = {
+//       status: "all good",
+//       message: "yup, the files were uploaded!!!",
+//       task: req.task,
+//     }
+//     res.json(data) // send respose
+//   }
+// })
 
 
 // export the express app we created to make it available to other modules
