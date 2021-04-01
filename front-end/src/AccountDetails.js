@@ -18,7 +18,10 @@ const accountDetails = (props) => {
             <section class="accountDetails">
                 <ProfilePicture> </ProfilePicture>
                 <h4 id="username">Username: {accountInfo.userName}</h4>
-                <button onClick={handleProfilePhoto}>Edit Profile Picture</button>
+                {/* <input name="my_files" type="file" multiple />
+                <br></br>
+                <input type="submit" value="Submit!!!" /> */}
+                <button onClick={handleProfilePicture}>Edit Profile Picture</button>
                 <p></p>
                 <h4>First Name: {accountInfo.firstName}</h4>
                 <p></p>
@@ -37,8 +40,8 @@ const accountDetails = (props) => {
     )
 }
 
-const handleProfilePhoto = (props) =>{
-    //redirect to profile photo editing page
+const handleProfilePicture = (props) =>{
+    <input name="edit_profile" type="file" multiple />
 }
 
 const handleEditDetails=(props)=>{
