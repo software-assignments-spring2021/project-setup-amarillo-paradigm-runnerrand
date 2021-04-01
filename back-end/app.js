@@ -19,10 +19,10 @@ app.get("/", (req, res) => {
   res.send("Hello!")
 })
 
-app.post('/post-task', (req, res) => {
+app.post('/post-task', (req, res, next) => {
   const newTask = {
     status: "success!",
-    message: "congratulations on send us this data!",
+    message: "congratulations on sending us this data!",
     data: {
       taskTitle: req.body.title,
       taskID: req.body.task_id,
