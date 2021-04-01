@@ -15,9 +15,6 @@ module.exports = {
   close: close,
 }
 
-
-// console.log(newUser);
-
 // User.findOne({ username: req.body.email }).then(user => {
 //   if (user) {
 //     return res.status(400).json({error: 'An account already exists with that email. Please use a different email.'})
