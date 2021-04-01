@@ -53,6 +53,18 @@ app.post('/register', (req, res, next) => {
   res.json(newUser)
 })
 
+app.post('/logIn', (req, res, next) => {
+  const logIn = {
+    status: "success!",
+    message: "congratulations on sending us this data!",
+    data: {
+      username: req.body.username,
+      password: req.body.password,
+    },
+  }
+  res.json(logIn)
+})
+
 // route for HTTP POST requests for /upload-task
 // app.post("/upload-task", (req, res, next) => {
 //   // check whether anything was uploaded
