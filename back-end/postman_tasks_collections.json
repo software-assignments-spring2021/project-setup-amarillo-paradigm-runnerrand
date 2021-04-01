@@ -253,11 +253,11 @@
             ]
           },
           "url": {
-            "raw": "http://localhost:3000/logIn",
+            "raw": "http://localhost:3000/log-in",
             "protocol": "http",
             "host": ["localhost"],
             "port": "3000",
-            "path": ["logIn"]
+            "path": ["log-in"]
           },
           "description": "Check out the data that is being passed to the server by clicking the 'Body' tab below.  This data is sent to the server via HTTP POST."
         },

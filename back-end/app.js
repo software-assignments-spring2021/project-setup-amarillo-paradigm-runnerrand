@@ -53,7 +53,7 @@ app.post('/register', (req, res, next) => {
   res.json(newUser)
 })
 
-app.post('/logIn', (req, res, next) => {
+app.post('/log-in', (req, res, next) => {
   const logIn = {
     status: "success!",
     message: "congratulations on sending us this data!",
