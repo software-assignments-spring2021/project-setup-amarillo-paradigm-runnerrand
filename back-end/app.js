@@ -1,8 +1,19 @@
 // import and instantiate express
 const express = require("express") // CommonJS import style!
 const app = express() // instantiate an Express object
+
+// import some useful middleware
+const bodyParser = require("body-parser") // middleware to help parse incoming HTTP POST data
+const multer = require("multer") // middleware to handle HTTP POST requests with file uploads
+const axios = require("axios") // middleware for making requests to APIs
+require("dotenv").config({ silent: true }) // load environmental variables from a hidden file named .env
+const morgan = require("morgan") // middleware for nice logging of incoming HTTP requests
+
+
 // we will put some server logic here later...
 const User = require('./User')
+
+//<script type="module" src="../front-end/src/Home.js"></script>
 
 
 // use the morgan middleware to log all incoming http requests
@@ -13,12 +24,35 @@ app.use(express.json()) // decode JSON-formatted incoming POST data
 app.use(express.urlencoded({ extended: true })) // decode url-encoded incoming POST data
 
 // make 'public' directory publicly readable with static content
-app.use("/static", express.static("public"))
+//app.use("/static", express.static("/../front-end/src"))
+//app.use(express.static(path.join(__dirname, '/../front-end/scr')));
+//app.use(express.static(path.join(__dirname, '/../client/public')))
 
-
+//variables of route path
+//var homeRouter = require("/../front-end/src/Home.js");
 
 app.get("/", (req, res) => {
   res.send("Hello!")
+})
+
+//app.get("/Home", homeRouter)
+
+app.get("/html-example", (req, res) => {
+  res.sendFile("/public/some-page.html", { root: __dirname })
+})
+
+// route for HTTP GET requests to /json-example
+app.get("/json-example", (req, res) => {
+  // assemble an object with the data we want to send
+  const body = {
+    title: "Hello!",
+    heading: "Hello!",
+    message: "Welcome to this JSON document, served up by Express",
+    imagePath: "/static/images/donkey.jpg",
+  }
+
+  // send the response as JSON to the client
+  res.json(body)
 })
 
 app.post('/post-task', (req, res, next) => {
