@@ -1,6 +1,16 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+
 var reviewSchema = new mongoose.Schema({
-    
+    reviewer:{
+        type: String,
+        required: true
+    },
+
+    target: {
+        type: mongoose.Schema.Types.ObjectID,
+        ref: 'User',
+        required: true
+    },
     rating:{
         type: Number,
         required: true
@@ -9,4 +19,5 @@ var reviewSchema = new mongoose.Schema({
         type: String
     }
 })
-module.exports = mongoose.model("Review", ReviewSchema)
+
+module.exports = mongoose.model("Review", ReviewSchema);
