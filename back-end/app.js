@@ -34,6 +34,24 @@ app.get("/", (req, res) => {
 })
 
 
+
+
+//app.get("/Home", homeRouter)
+
+// route for HTTP GET requests to /json-example
+app.get("/json-example", (req, res) => {
+  // assemble an object with the data we want to send
+  const body = {
+    title: "Hello!",
+    heading: "Hello!",
+    message: "Welcome to this JSON document, served up by Express",
+    imagePath: "/static/images/donkey.jpg",
+  }
+
+  // send the response as JSON to the client
+  res.json(body)
+})
+
 app.post('/post-task', (req, res, next) => {
   const newTask = {
     status: "success!",
