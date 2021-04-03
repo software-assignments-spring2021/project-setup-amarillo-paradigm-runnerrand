@@ -34,10 +34,6 @@ app.get("/", (req, res) => {
 })
 
 
-app.get("/html-example", (req, res) => {
-  res.sendFile("/public/some-page.html", { root: __dirname })
-})
-
 app.post('/post-task', (req, res, next) => {
   const newTask = {
     status: "success!",
