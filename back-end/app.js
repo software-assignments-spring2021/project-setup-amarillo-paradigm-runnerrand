@@ -8,10 +8,13 @@ const multer = require("multer") // middleware to handle HTTP POST requests with
 const axios = require("axios") // middleware for making requests to APIs
 require("dotenv").config({ silent: true }) // load environmental variables from a hidden file named .env
 const morgan = require("morgan") // middleware for nice logging of incoming HTTP requests
-
+const mongoose = require('mongoose');
 
 // we will put some server logic here later...
 const User = require('./User')
+
+const userTest = mongoose.model("User");
+const taskTest = mongoose.model("Task");
 
 //<script type="module" src="../front-end/src/Home.js"></script>
 
@@ -25,34 +28,14 @@ app.use(express.urlencoded({ extended: true })) // decode url-encoded incoming P
 
 // make 'public' directory publicly readable with static content
 //app.use("/static", express.static("/../front-end/src"))
-//app.use(express.static(path.join(__dirname, '/../front-end/scr')));
-//app.use(express.static(path.join(__dirname, '/../client/public')))
-
-//variables of route path
-//var homeRouter = require("/../front-end/src/Home.js");
 
 app.get("/", (req, res) => {
   res.send("Hello!")
 })
 
-//app.get("/Home", homeRouter)
 
 app.get("/html-example", (req, res) => {
   res.sendFile("/public/some-page.html", { root: __dirname })
-})
-
-// route for HTTP GET requests to /json-example
-app.get("/json-example", (req, res) => {
-  // assemble an object with the data we want to send
-  const body = {
-    title: "Hello!",
-    heading: "Hello!",
-    message: "Welcome to this JSON document, served up by Express",
-    imagePath: "/static/images/donkey.jpg",
-  }
-
-  // send the response as JSON to the client
-  res.json(body)
 })
 
 app.post('/post-task', (req, res, next) => {
