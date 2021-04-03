@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const server = require("./app") // load up the web server
-const port = 4000 // the port to listen to for incoming requests
+const port = 3000 // the port to listen to for incoming requests
 // const User = require( './models/User' );
 
 // call express's listen function to start listening to the port
