@@ -24,31 +24,9 @@ app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nic
 app.use(express.json()) // decode JSON-formatted incoming POST data
 app.use(express.urlencoded({ extended: true })) // decode url-encoded incoming POST data
 
-// make 'public' directory publicly readable with static content
-//app.use("/static", express.static("public"))
-//app.use("/static", express.static("/../front-end/src"))
-//app.use(express.static(path.join(__dirname, '/../front-end/scr')));
-//app.use(express.static(path.join(__dirname, '/../client/public')))
-
-//variables of route path
-//var homeRouter = require("/../front-end/src/Home.js");
 
 app.get("/", (req, res) => {
   res.send("Hello!")
-})
-
-// route for HTTP GET requests to /json-example
-app.get("/json-example", (req, res) => {
-  // assemble an object with the data we want to send
-  const body = {
-    title: "Hello!",
-    heading: "Hello!",
-    message: "Welcome to this JSON document, served up by Express",
-    imagePath: "/static/images/donkey.jpg",
-  }
-
-  // send the response as JSON to the client
-  res.json(body)
 })
 
 app.post('/post-task', (req, res, next) => {
