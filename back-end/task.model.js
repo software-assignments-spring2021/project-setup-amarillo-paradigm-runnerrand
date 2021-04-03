@@ -28,7 +28,8 @@ const TaskSchema = new mongoose.Schema({
     },
     expire_date: Date,
     payment: String,
-    shipment: String
+    location: String,
+    contact: String,
     
 })
 
