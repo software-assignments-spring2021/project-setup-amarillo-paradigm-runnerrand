@@ -6,7 +6,12 @@ const TaskSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    
+
+    status: {
+        type: String,
+        required: true,
+        default: "available"
+    },
     title: {
         type: String,
         required: true
@@ -16,7 +21,9 @@ const TaskSchema = new mongoose.Schema({
         type: String,
         
         required: true
-    }
+    },
+    description: String,
+    price: String,
     
 })
 
