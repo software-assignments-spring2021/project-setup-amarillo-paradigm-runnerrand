@@ -12,7 +12,8 @@ const mongoose = require('mongoose');
 
 // we will put some server logic here later...
 //const User = require('./User')
-
+const User = mongoose.model("User");
+const Plan = mongoose.model("Plan");
 //<script type="module" src="../front-end/src/Home.js"></script>
 
 
