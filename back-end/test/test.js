@@ -9,7 +9,7 @@ const assert = chai.assert;
 
 require('../db.js');
 const mongoose = require('mongoose');
-const Plan = mongoose.model('Plan');
+const Task = mongoose.model('Task');
 const User = mongoose.model('User');
 
 const express = require('express');
@@ -25,7 +25,7 @@ describe('User Model', function() {
 		it('should not save a new User without a Username or Password created', function(done) {
 				const user = new User({
 					email: "user999@gmail.com",
-					plans: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Plan' }]
+					tasks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Task' }]
 				});
       				user.save(function(err) {
 	        			expect(err).to.exist
@@ -38,7 +38,7 @@ describe('User Model', function() {
 				const user = new User({
   					username: "user999",
 					password: "abc12345678",
-					plans: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Plan' }]
+					tasks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Task' }]
 				});
       				user.save(function(err) {
 	        			expect(err).to.exist

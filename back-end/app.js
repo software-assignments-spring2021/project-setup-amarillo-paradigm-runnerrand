@@ -11,10 +11,10 @@ const morgan = require("morgan") // middleware for nice logging of incoming HTTP
 const mongoose = require('mongoose');
 
 // we will put some server logic here later...
-const User = require('./User')
+//const User = require('./User')
 
-const userTest = mongoose.model("User");
-const taskTest = mongoose.model("Task");
+const User = mongoose.model("User");
+const Task = mongoose.model("Task");
 
 //<script type="module" src="../front-end/src/Home.js"></script>
 
