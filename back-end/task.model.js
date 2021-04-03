@@ -6,7 +6,6 @@ const TaskSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-
     status: {
         type: String,
         required: true,
@@ -16,7 +15,6 @@ const TaskSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    
     category:{
         type: String,
         
@@ -24,6 +22,13 @@ const TaskSchema = new mongoose.Schema({
     },
     description: String,
     price: String,
+    created_date: {
+        type: Date,
+        default: Date.now
+    },
+    expire_date: Date,
+    payment: String,
+    shipment: String
     
 })
 
