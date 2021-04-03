@@ -7,7 +7,6 @@ const should = chai.should();
 const chaiHttp = require("chai-http");
 const assert = chai.assert;
 
-require('../db.js');
 const mongoose = require('mongoose');
 const Task = mongoose.model('Task');
 const User = mongoose.model('User');
