@@ -8,30 +8,35 @@ const multer = require("multer") // middleware to handle HTTP POST requests with
 const axios = require("axios") // middleware for making requests to APIs
 require("dotenv").config({ silent: true }) // load environmental variables from a hidden file named .env
 const morgan = require("morgan") // middleware for nice logging of incoming HTTP requests
-const mongoose = require('mongoose');
+
 
 // we will put some server logic here later...
-//const User = require('./User')
-
-const User = mongoose.model("User");
-const Task = mongoose.model("Task");
+const User = require('./User')
 
 //<script type="module" src="../front-end/src/Home.js"></script>
 
 
 // use the morgan middleware to log all incoming http requests
-// app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nice concise color-coded style
+app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nice concise color-coded style
 
 // use the bodyparser middleware to parse any data included in a request
 app.use(express.json()) // decode JSON-formatted incoming POST data
 app.use(express.urlencoded({ extended: true })) // decode url-encoded incoming POST data
 
 // make 'public' directory publicly readable with static content
+//app.use("/static", express.static("public"))
 //app.use("/static", express.static("/../front-end/src"))
+//app.use(express.static(path.join(__dirname, '/../front-end/scr')));
+//app.use(express.static(path.join(__dirname, '/../client/public')))
+
+//variables of route path
+//var homeRouter = require("/../front-end/src/Home.js");
 
 app.get("/", (req, res) => {
   res.send("Hello!")
 })
+
+//app.get("/Home", homeRouter)
 
 // route for HTTP GET requests to /json-example
 app.get("/json-example", (req, res) => {
@@ -136,6 +141,23 @@ app.post('/log-in', (req, res, next) => {
 //   }
 // })
 
+// proxy requests to/from an API
+app.get("/proxy-example", (req, res, next) => {
+  // use axios to make a request to an API for animal data
+  axios
+    .get("https://my.api.mockaroo.com/animals.json?key=d9ddfc40&num=10")
+    .then(apiResponse => res.json(apiResponse.data)) // pass data along directly to client
+    .catch(err => next(err)) // pass any errors to express
+})
+
+// same route as above, but using environmental variables for secret credentials
+app.get("/dotenv-example", (req, res, next) => {
+  // insert the environmental variable into the URL we're requesting
+  axios
+    .get(`${process.env.API_BASE_URL}?key=${process.env.API_SECRET_KEY}&num=10`)
+    .then(apiResponse => res.json(apiResponse.data)) // pass data along directly to client
+    .catch(err => next(err)) // pass any errors to express
+})
 
 // export the express app we created to make it available to other modules
 module.exports = app
