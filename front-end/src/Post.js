@@ -34,7 +34,6 @@ const Post = () =>{
            
             <br></br>
             
-            
 
             <label for="Category" className="item">Campus:</label><br></br>
            
@@ -45,9 +44,34 @@ const Post = () =>{
             </DropdownButton>
             <br></br>
 
+            <form action="/upload-task" method="POST" enctype="multipart/form-data">
+                {/* <input name="my_files" type="file" multiple />
+                <input type="submit" value="Submit!!!" /> */}
 
+                <label for="Address" className="item">Address:</label><br></br>
+                <input name="my_task" type="text" id="textbar"/> <br></br>
+
+                <br></br>
+                <label for="Task Title" className="item">Due Date:</label><br></br>
+                <input name="my_task" type="text" id="textbar"/> <br></br>
+
+                <br></br>
+                <label for="Task Title" className="item">Budget:</label><br></br>
+                <input name="my_task" type="text" id="textbar"/> <br></br>
+
+                <br></br>
+                <label for="Task Title" className="item">Contact:</label><br></br>
+                <input name="my_task" type="text" id="textbar"/> <br></br>
+
+                <br></br>
+                <label for="details" className="item">Details:</label><br></br>
+                {/* <textarea type="text" id="textarea"/> <br></br> */}
+                <input name="my_task" type="text" id="textbar"/> <br></br>
+
+                <input type="submit" value="Post" />
+            </form>
            
-            <label for="Adsress" className="item">Address:</label><br></br>
+            {/* <label for="Adsress" className="item">Address:</label><br></br>
             <input type="text" id="textbar"/> <br></br>
 
             <br></br>
@@ -64,12 +88,12 @@ const Post = () =>{
 
             <br></br>
             <label for="details" className="item">Details:</label><br></br>
-            <textarea type="text" id="textarea"/> <br></br>
+            <textarea type="text" id="textarea"/> <br></br> */}
 
-            <div>
+            {/* <div>
                 <button onClick={handlePostButton}>Post</button> 
                 <button onClick={handleCancelButtion}>Cancel</button>
-            </div>
+            </div> */}
             
 
         </section>
