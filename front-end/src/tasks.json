@@ -1,0 +1,56 @@
+[
+    {
+      "id": 1,
+      "title": "Math Tutor Needed",
+      "category": "tutoring",
+      "price": "$50.00",
+      "description": "My son is struggling with his math homework, and I am in dire need of a tutor for him!",
+      "contact": "555-1212",
+      "campus": "New York"
+    },
+    {
+      "id": 2,
+      "title": "Mow the Lawn",
+      "category": "Gardening",
+      "price": "$80.00",
+      "description": "I have some yard work that needs to be done for 3 hours this weekend, mostly to mow the law.  I am offering $80!",
+      "contact": "555-1000",
+      "campus": "Boston"
+    },
+    {
+      "id": 3,
+      "title": "Deliver a Package Across Town",
+      "category": "Delivery",
+      "price": "$25.00",
+      "description": "I need a box of supplies that needs to be sent across town to the Art Studio.  Total distance is about 10 miles.  Any takers?",
+      "contact": "688-1888",
+      "campus": "Los Angeles"
+    },
+    {
+      "id": 4,
+      "title": "Personal Shopper for Saturday",
+      "category": "shopping",
+      "price": "$200.00",
+      "description": "I need a personal shopper to assist with buying some luxury goods at Saks on Saturday afternoon.  Willing pay $200 for 2 hours of work!",
+      "contact": "388-0000",
+      "campus": "Seattle"
+    },
+    {
+      "id": 5,
+      "title": "Volunteer at Soup Kitchen Needed",
+      "category": "volunteer",
+      "price": "$0.00",
+      "description": "We are a soup kitchen on on the west side whom are in dire need of volunteers.  Unfortunately we won't be able to pay you, but you will get free food!",
+      "contact": "000-1212",
+      "campus": "Phoenix"
+    },
+    {
+      "id": 6,
+      "title": "Handman Needed to Assemble My Bedroom Set",
+      "category": "handywork",
+      "price": "$50.00",
+      "description": "I have a bedroom set that came in and I have no idea how to put it together :(",
+      "contact": "415-1280",
+      "campus": "San Francisco"
+    }
+  ]
