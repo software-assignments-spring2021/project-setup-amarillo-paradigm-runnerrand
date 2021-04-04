@@ -1,6 +1,9 @@
 import './Home.css'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import tasks from './tasks.json'
+import Fuse from 'fuse.js'
+
 import { Link } from 'react-router-dom'
 import tutoring  from './HomePagePic/Tutoring.png'
 import assembly  from './HomePagePic/Assembly.png'
@@ -8,20 +11,42 @@ import shopping  from './HomePagePic/Shopping.png'
 import volunteering  from './HomePagePic/Volunteering.png'
 import TaskPreview from './TaskPreview'
 const Home = (props) => {
-    // start a state varaible with a blank array
-    const [data, setData] = useState([])
+    const [data, setData] = useState('')
+
+    const fuse = new Fuse(tasks, {
+      keys:[
+        'id',
+        'title',
+        'category',
+        'campus',
+        'price',
+        'contact',
+        'description'
+      ],
+      includeScore: true
+    })
+
+    const results = fuse.search(data)
+    const tasksResults = data ? results.map(result => result.item) : tasks
+
+    function handleOnSearch({ currentTarget }) {
+      setData(currentTarget.value);
+    }
+    
+    console.log('results', results)
   
-    useEffect(() => {
-      console.log('fetching data')
-      axios('http://104.131.170.212:3333/posts')
-        .then((response) => {
-          setData(response.data)
-        })
-        .catch((err) => {
-          console.log(`Error with fetching server data, defaulting to backup data`)
+    // useEffect(() => {
+    //   console.log('fetching data')
+    //   axios('http://104.131.170.212:3333/posts')
+    //     .then((response) => {
+    //       setData(response.data)
+    //     })
+    //     .catch((err) => {
+    //       console.log(`Error with fetching server data, defaulting to backup data`)
   
-        })
-    }, []) 
+    //     })
+    // }, []) 
+
     return(
       <div>
         <div className="searchBar">
@@ -31,19 +56,20 @@ const Home = (props) => {
        
             <p></p>
             <h1>What do you need help for ? </h1>
-            <input type="text" id="JobSearchBar" name="JobSearch" placeholder="Search for jobs"/>
+            <input type="text" id="JobSearchBar" name="JobSearch" placeholder="Search for jobs" value={data} onChange={handleOnSearch}/>
 
             <p></p>
         </div>
         <h1>Current Active Tasks:</h1>
         <section className="tasks">
-        {data.map((item) => (
-          <TaskPreview key={item.id} details={item} />          
-        ))}
-      </section>
+          {tasksResults.map(item => {
+          return <TaskPreview key={item.id} details={item} /> 
+          })}
+          </section>
      </div>
-    );
+    )
    }
+
 
     const handleCatogories = () =>{
         // redirect to Task List page
