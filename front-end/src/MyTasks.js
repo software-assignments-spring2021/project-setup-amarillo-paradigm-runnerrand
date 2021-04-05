@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import './MyTasks.css';
+
 
 
 function MyTasks() {
@@ -9,7 +11,7 @@ function MyTasks() {
   
     const fetchDataScheduled = async () => {
       const response = await axios.get(
-        'http://104.131.170.212:3333/mytasks_scheduled'
+        'http://localhost:3000/mytasks_scheduled'
       );
   
       setTasks(response.data);
@@ -17,7 +19,7 @@ function MyTasks() {
 
     const fetchDataCompleted = async () => {
         const response = await axios.get(
-          'http://104.131.170.212:3333/mytasks_completed'
+          'http://localhost:3000/mytasks_completed/'
         );
     
         setTasks(response.data);
@@ -40,14 +42,21 @@ function MyTasks() {
           {/* Display data from API */}
           <div className="tasks">
               
+
+
+              
             {tasks &&
               tasks.map((task, index) => {
     
                 return (
+
+
                   <div className="task" key={index}>
+
                     <p>Task ID: {task.id}</p>
+                    <Link to={`/display_mytasks/${task.id}`}>
                     <h2>{task.title}</h2>
-    
+                  </Link>
                     <div className="details">
                     <p><center>Status: {task.status}</center></p>
                       <p><center>Price: {task.price}</center></p>
