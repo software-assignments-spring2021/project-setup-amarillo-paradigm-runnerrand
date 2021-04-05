@@ -118,12 +118,7 @@ app.get("/tasks_api", (req, res, next) => {
 
 app.get("/tasks_api/:id", (req, res, next) => {
   axios
-    .get("http://104.131.170.212:3333/posts", {
-      params: {
-        id: req.params.id
-      }
-
-    })
+    .get(`http://104.131.170.212:3333/tasks_api/${req.params.id}`)
     .then(apiResponse => res.json(apiResponse.data)) 
     .catch(err => next(err)) 
 })
