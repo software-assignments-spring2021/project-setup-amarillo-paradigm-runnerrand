@@ -1,33 +1,43 @@
 {
-  "name": "back-end",
-  "version": "1.0.0",
-  "description": "The back-end of your project will live in this directory.",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/agile-dev-assignments/project-setup-amarillo-paradigm-runnerrand.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/agile-dev-assignments/project-setup-amarillo-paradigm-runnerrand/issues"
-  },
-  "homepage": "https://github.com/agile-dev-assignments/project-setup-amarillo-paradigm-runnerrand#readme",
+  "name": "front-end",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
-    "body-parser": "^1.19.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.12.3",
-    "morgan": "^1.10.0",
-    "multer": "^1.4.2"
+    "bootstrap": "^4.6.0",
+    "fuse.js": "^6.4.6",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.5.2",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.0"
   },
-  "devDependencies": {
-    "chai": "^4.3.4",
-    "nodemon": "^2.0.7"
+  "scripts": {
+    "start": "PORT=4001 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
