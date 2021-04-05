@@ -24,7 +24,7 @@ const TaskBrowser = (props) => {
 
         setData(backupData[0]);
       })
-  })
+    }, [props.taskId])
 
   const imgSrc = `https://picsum.photos/200?id=${props.taskId}`;
 
@@ -45,7 +45,7 @@ const TaskBrowser = (props) => {
             <strong class="status">Status: {data.status}</strong></p>
             <p>Description: {data.description}</p>
             <p>Contact: {data.contact}</p>
-            <button class="buy-now" onClick={() => routerContext.history.goBack()}>Go Back</button>
+            <button class="go-back" onClick={() => routerContext.history.goBack()}>Go Back</button>
           </div>
         </article>
       </section>

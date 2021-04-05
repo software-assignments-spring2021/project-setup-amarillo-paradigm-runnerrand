@@ -13,7 +13,7 @@ import ResetPassword from './ResetPassword'
 import PaymentMethod from './PaymentMethod';
 import PasswordResetConfirmation from './PasswordResetConfirmation'
 import TaskList from './TaskList'
-import TaskDetails from './TaskDatails'
+import TaskDetails from './TaskDetails'
 import PostConfirmation from './PostConfirmation'
 import TaskListGen from './TaskListGen'
 import TaskBrowser from './TaskBrowser'
@@ -29,6 +29,14 @@ const TaskWrapper = ({ match }) => {
   )
 }
 
+const TaskDetailsWrapper = ({ match }) => {
+  return (
+    <>
+      <NavBar />
+      <TaskDetails taskId={match.params.id} />
+    </>
+  )
+}
 
 
 const App = (props)=> {
@@ -60,6 +68,8 @@ const App = (props)=> {
           <NavBar />
           <TaskDetails />
         </Route>
+
+        <Route path="/TaskDetails/:id" component={TaskDetailsWrapper} />
 
         <Route exact path="/Login" >
           <NavBar />

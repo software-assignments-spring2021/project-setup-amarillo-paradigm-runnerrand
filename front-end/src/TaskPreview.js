@@ -10,7 +10,7 @@ const TaskPreview = (props) => {
 
   return (
     <article className="TaskPreview">
-        <Link to={`/TaskDetails`}>
+        <Link to={`/TaskDetails/${props.details.id}`}>
         <h2>{props.details.title}</h2>
         <img alt={props.details.title} src={imgSrc} className="taskImage"/>
       </Link>
