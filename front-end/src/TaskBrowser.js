@@ -8,7 +8,7 @@ const TaskBrowser = (props) => {
 
   useEffect(() => {
 
-    axios.get('http://104.131.170.212:3333/posts')
+    axios.get('http://localhost:3000/tasks_api')
       .then((response) => {
         console.log(response)
         setData(response.data)
