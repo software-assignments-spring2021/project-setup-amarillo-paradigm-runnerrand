@@ -114,22 +114,30 @@ app.get("/tasks_api", (req, res, next) => {
     .catch(err => next(err)) 
 })
 
-app.get("/tasks_api/:id", async (req, res) => {
+app.get("/tasks_api/:id", (req, res, next) => {
   axios
-    .get(
-      'http://104.131.170.212:3333/posts/${req.params.id}'
-    )
+    .get("http://104.131.170.212:3333/posts", {
+      params: {
+        id: req.params.id
+      }
+
+    })
+    .then(apiResponse => res.json(apiResponse.data)) 
     .catch(err => next(err)) 
-  
-    const responseData = {
-      status: "wonderful",
-      message: `Imagine we got the data from the API for animal #${req.params.id}`,
-      animalId: req.params.id,
-      animal: apiResponse.data,
-    }
+})
 
-    res.json(responseData)
+app.get("/mytasks_scheduled", (req, res, next) => {
+  axios
+    .get("http://104.131.170.212:3333/mytasks_scheduled")
+    .then(apiResponse => res.json(apiResponse.data)) 
+    .catch(err => next(err)) 
+})
 
+app.get("/mytasks_completed", (req, res, next) => {
+  axios
+    .get("http://104.131.170.212:3333/mytasks_completed")
+    .then(apiResponse => res.json(apiResponse.data)) 
+    .catch(err => next(err)) 
 })
 
 
