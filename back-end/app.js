@@ -106,6 +106,24 @@ app.post('/log-in', (req, res, next) => {
   res.json(logIn)
 })
 
+// Task Proxy API
+app.get("/tasks_api", (req, res, next) => {
+  axios
+    .get("http://104.131.170.212:3333/posts")
+    .then(apiResponse => res.json(apiResponse.data)) 
+    .catch(err => next(err)) 
+})
+
+// same route as above, but using environmental variables for secret credentials
+app.get("/dotenv-example", (req, res, next) => {
+  // insert the environmental variable into the URL we're requesting
+  axios
+    .get(`${process.env.API_BASE_URL}?key=${process.env.API_SECRET_KEY}&num=10`)
+    .then(apiResponse => res.json(apiResponse.data)) // pass data along directly to client
+    .catch(err => next(err)) // pass any errors to express
+})
+
+
 // route for HTTP POST requests for /upload-task
 // app.post("/upload-task", (req, res, next) => {
 //   // check whether anything was uploaded
@@ -119,24 +137,6 @@ app.post('/log-in', (req, res, next) => {
 //     res.json(data) // send respose
 //   }
 // })
-
-// proxy requests to/from an API
-app.get("/proxy-example", (req, res, next) => {
-  // use axios to make a request to an API for animal data
-  axios
-    .get("https://my.api.mockaroo.com/animals.json?key=d9ddfc40&num=10")
-    .then(apiResponse => res.json(apiResponse.data)) // pass data along directly to client
-    .catch(err => next(err)) // pass any errors to express
-})
-
-// same route as above, but using environmental variables for secret credentials
-app.get("/dotenv-example", (req, res, next) => {
-  // insert the environmental variable into the URL we're requesting
-  axios
-    .get(`${process.env.API_BASE_URL}?key=${process.env.API_SECRET_KEY}&num=10`)
-    .then(apiResponse => res.json(apiResponse.data)) // pass data along directly to client
-    .catch(err => next(err)) // pass any errors to express
-})
 
 // export the express app we created to make it available to other modules
 module.exports = app
