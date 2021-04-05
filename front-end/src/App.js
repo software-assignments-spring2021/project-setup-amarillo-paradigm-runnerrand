@@ -49,7 +49,7 @@ const App = (props)=> {
         </Route>
 
 
-          <Route path="/tasks/:id" component={TaskWrapper} />
+
 
           <Route path="/tasks">
             <TaskListGen />
@@ -90,6 +90,8 @@ const App = (props)=> {
           <NavBar />
           <MyTasks />
         </Route>
+
+        <Route path="/display_mytasks/:id" component={TaskWrapper} />
 
         <Route exact path="/ResetPassword" >
           <NavBar />
