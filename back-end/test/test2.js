@@ -8,7 +8,7 @@ chai.use(chaiHttp);
 
 // POST /save-restaurant
 describe('post-task test', () => {
-    it('should respond with JSON data = {data:{xxx,xxx,xxx,xxx}}', () => {
+    it('should respond with JSON data = {data:{taskTitle,"1",taskID,"2"}}', () => {
       chai.request(app)
         .post('/post-task')
         .send({title:"1",task_id:"2"})
