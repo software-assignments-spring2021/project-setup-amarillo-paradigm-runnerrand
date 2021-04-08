@@ -19,13 +19,56 @@
     border-radius: 3px;
     outline: none;
     /*padding: 14px 10px 14px;*/
-    
 }
+#postTitle{
+    font-family: georgia;
+}
+.postTask{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 20px 20px;
+    width: 50%;
+    background-color: #fcfcfc;
+    border: 1px solid #00000033;
+    outline: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border-radius: 3px;
+    color: #333;
+  }
 
-
-
-
-
+  .taskDetails{
+    padding: 10px 10px;
+    width: 100%;
+    background-color: #fcfcfc;
+    border: 1px solid #00000033;
+    outline: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border-radius: 3px;
+    color: #333;
+  }
+  
+#post{
+    padding: 10px 10px;
+    width: 50%;
+    background-color: #fcfcfc;
+    border: 1px solid #00000033;
+    font-family: georgia;
+    outline: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border-radius: 3px;
+    color: #333;
+}
+#post:hover {
+    background-color: #909090;
+    font-family: georgia;
+    color: black;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
 
 #textbar{
     padding: 14px 10px 14px;
