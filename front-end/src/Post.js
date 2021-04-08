@@ -45,15 +45,15 @@ function Post() {
     return (
         <div>
             <div>
-                
-                <form onSubmit={(e)=> submit(e)}>
-                    <input onChange={(e) => handle(e)} id="title" value={data.title} placeholder="title" type="text"></input>
-                    <input onChange={(e) => handle(e)} id="category" value={data.category} placeholder="category" type="text"></input>
-                    <input onChange={(e) => handle(e)} id="campus" value={data.campus} placeholder="campus" type="text"></input>
-                    <input onChange={(e) => handle(e)} id="address" value={data.address} placeholder="address" type="text"></input>
-                    <input onChange={(e) => handle(e)} id="duedate" value={data.duedate} placeholder="duedate" type="date"></input>
-                    <input onChange={(e) => handle(e)} id="budget" value={data.budget} placeholder="budget" type="text"></input>
-                    <input onChange={(e) => handle(e)} id="details" value={data.details} placeholder="details" type="text"></input>
+                <form onSubmit={(e)=> submit(e)} className="postTask">
+                    <p>Posting a Task:</p>
+                    <input onChange={(e) => handle(e)} id="title" value={data.title} placeholder="title" type="text" className="taskDetails"></input>
+                    <input onChange={(e) => handle(e)} id="category" value={data.category} placeholder="category" type="text" className="taskDetails"></input>
+                    <input onChange={(e) => handle(e)} id="campus" value={data.campus} placeholder="campus" type="text" className="taskDetails"></input>
+                    <input onChange={(e) => handle(e)} id="address" value={data.address} placeholder="address" type="text" className="taskDetails"></input>
+                    <input onChange={(e) => handle(e)} id="duedate" value={data.duedate} placeholder="duedate" type="date" className="taskDetails"></input>
+                    <input onChange={(e) => handle(e)} id="budget" value={data.budget} placeholder="budget" type="text" className="taskDetails"></input>
+                    <input onChange={(e) => handle(e)} id="details" value={data.details} placeholder="details" type="text" className="taskDetails"></input>
                     <button>Submit</button>
                 </form>
             </div>
