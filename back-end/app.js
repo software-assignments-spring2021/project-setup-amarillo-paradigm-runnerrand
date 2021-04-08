@@ -19,8 +19,6 @@ const taskRouter = require("./task.model")
 //const Plan = mongoose.model("Plan");
 //<script type="module" src="../front-end/src/Home.js"></script>
 
-
-// Fix Cross Site Scripting Protection on Browser
 app.use(cors())
 
 // use the morgan middleware to log all incoming http requests
@@ -30,7 +28,6 @@ app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nic
 app.use(express.json()) // decode JSON-formatted incoming POST data
 app.use(express.urlencoded({ extended: true })) // decode url-encoded incoming POST data
 
-// Setup MongoDB Connection
 const mongo_uri = process.env.MONGODB_KEY;
 
 mongoose.connect(mongo_uri, {useUnifiedTopology:true, useNewUrlParser:true})
@@ -42,7 +39,6 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
 
-// App Routes
 app.get("/", (req, res) => {
   res.send("Hello!")
 })
@@ -52,14 +48,12 @@ app.post('/post-task', (req, res, next) => {
     status: "success!",
     message: "congratulations on sending us this data!",
     data: {
-      taskTitle: req.body.title,
-      taskID: req.body.task_id,
-      taskCategory: req.body.category,
-      taskAddress: req.body.address,
-      taskDueDate: req.body.dueDate,
-      taskBudget: req.body.budget,
-      taskContact: req.body.contact,
-      taskRemarks: req.body.remarks,
+      title: req.body.title,
+      category: req.body.category,
+      address: req.body.address,
+      duedate: req.body.duedate,
+      budget: req.body.budget,
+      details: req.body.details,
     },
   }
   res.json(newTask)
