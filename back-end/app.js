@@ -7,7 +7,7 @@ const cors= require('cors')  // Enable CORS for localhost API proxy access
 const bodyParser = require("body-parser") // middleware to help parse incoming HTTP POST data
 const multer = require("multer") // middleware to handle HTTP POST requests with file uploads
 const axios = require("axios") // middleware for making requests to APIs
-require("dotenv").config({ silent: true }) // load environmental variables from a hidden file named .env
+require('dotenv').config(); // load environmental variables from a hidden file named .env
 const morgan = require("morgan") // middleware for nice logging of incoming HTTP requests
 const mongoose = require('mongoose');
 
@@ -27,6 +27,17 @@ app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nic
 // use the bodyparser middleware to parse any data included in a request
 app.use(express.json()) // decode JSON-formatted incoming POST data
 app.use(express.urlencoded({ extended: true })) // decode url-encoded incoming POST data
+
+
+const mongo_uri = process.env.MONGODB_KEY;
+
+mongoose.connect(mongo_uri, {useUnifiedTopology:true, useNewUrlParser:true})
+	.then((resolved) => console.log('Database CONNECTED'))
+	.catch((err) => console.log(err));
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
 
 
 app.get("/", (req, res) => {
