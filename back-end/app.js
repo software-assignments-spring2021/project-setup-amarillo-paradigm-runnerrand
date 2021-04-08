@@ -19,6 +19,8 @@ const taskRouter = require("./task.model")
 //const Plan = mongoose.model("Plan");
 //<script type="module" src="../front-end/src/Home.js"></script>
 
+
+// Fix Cross Site Scripting Protection on Browser
 app.use(cors())
 
 // use the morgan middleware to log all incoming http requests
@@ -28,7 +30,7 @@ app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nic
 app.use(express.json()) // decode JSON-formatted incoming POST data
 app.use(express.urlencoded({ extended: true })) // decode url-encoded incoming POST data
 
-
+// Setup MongoDB Connection
 const mongo_uri = process.env.MONGODB_KEY;
 
 mongoose.connect(mongo_uri, {useUnifiedTopology:true, useNewUrlParser:true})
@@ -40,6 +42,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 
 
+// App Routes
 app.get("/", (req, res) => {
   res.send("Hello!")
 })
