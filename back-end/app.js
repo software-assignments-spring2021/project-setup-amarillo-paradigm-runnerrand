@@ -1,7 +1,7 @@
 // import and instantiate express
 const express = require("express") // CommonJS import style!
 const app = express() // instantiate an Express object
-const cors= require('cors')  // Enable CORS for localhost API proxy access
+const cors = require('cors')  // Enable CORS for localhost API proxy access
 
 // import some useful middleware
 const bodyParser = require("body-parser") // middleware to help parse incoming HTTP POST data
@@ -14,7 +14,6 @@ const mongoose = require('mongoose');
 // we will put some server logic here later...
 //const User = require('./User')
 
-const userRouter = require('./user.model');
 const taskRouter = require("./task.model")
 //const Plan = mongoose.model("Plan");
 //<script type="module" src="../front-end/src/Home.js"></script>
@@ -22,21 +21,26 @@ const taskRouter = require("./task.model")
 app.use(cors())
 
 // use the morgan middleware to log all incoming http requests
-app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nice concise color-coded style
+app.use(morgan("dev")) // morgan has a few logging default styles - dev is a nice concise color-coded st yle
 
 // use the bodyparser middleware to parse any data included in a request
 app.use(express.json()) // decode JSON-formatted incoming POST data
 app.use(express.urlencoded({ extended: true })) // decode url-encoded incoming POST data
 
-const mongo_uri = process.env.MONGODB_KEY;
+const mongo_uri = process.env.MONGODB_KEY; 
+
+mongoose.Promise = global.Promise
 
 mongoose.connect(mongo_uri, {useUnifiedTopology:true, useNewUrlParser:true})
 	.then((resolved) => console.log('Database CONNECTED'))
-	.catch((err) => console.log(err));
+	.catch((err) => console.log(err) );
 
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
+
+// Routes
+app.use('/users', require('./routes/users'))
 
 
 app.get("/", (req, res) => {
@@ -174,9 +178,6 @@ app.get("/dotenv-example", (req, res, next) => {
     .then(apiResponse => res.json(apiResponse.data)) // pass data along directly to client
     .catch(err => next(err)) // pass any errors to express
 })
-
-
-
 
 
 // route for HTTP POST requests for /upload-task
