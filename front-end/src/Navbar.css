@@ -1,4 +1,22 @@
 /* Modify the backgorund color */
 .navbar-custom {
-    background-color: blue;
+    background-color: #3f51b5;
+}
+
+.navbar-custom sup{
+    font-weight: bold;
+}
+
+.navbar-custom button{
+    border: 1px solid #FFF;
+    transition: all .3s;
+    font-size: 1rem;
+    padding: 8px 16px;
+}
+
+.navbar-custom button:hover{
+    border: 1px solid transparent;
+    font-size: 1rem!important;
+    padding: 8px 16px!important;
+    background-color: #FFF;
 }
