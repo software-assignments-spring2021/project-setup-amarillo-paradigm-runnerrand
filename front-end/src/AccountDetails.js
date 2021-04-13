@@ -1,6 +1,6 @@
 import './AccountDetails.css';
 import ProfilePicture from './ProfilePicture';
-// should account details be run with another .js file like App.js? 
+
 const accountDetails = (props) => {
     const accountInfo ={
         userName: "null",
@@ -15,7 +15,7 @@ const accountDetails = (props) => {
             <button onClick={handleGoBack}> Go Back </button>
             <h1 className="title">Account Details</h1>
             <hr></hr>
-            <section class="accountDetails">
+            <section className="accountDetails">
                 <ProfilePicture> </ProfilePicture>
                 <h4 id="username">Username: {accountInfo.userName}</h4>
                 {/* <input name="my_files" type="file" multiple />
