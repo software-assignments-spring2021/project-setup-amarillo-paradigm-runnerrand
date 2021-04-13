@@ -11,6 +11,9 @@ router.route('/signup')
 router.route('/signin')
     .post(passport.authenticate('local', { session: false}), UsersController.signin)
 
+router.route('/auth_user')
+    .get(passport.authenticate('jwt', { session: false}), UsersController.data)
+
 router.route('/secret')
     .get(passport.authenticate('jwt', { session: false}), UsersController.secret)
 
