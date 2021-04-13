@@ -37,15 +37,15 @@ const TaskBrowser = (props) => {
       <section className="main-content">
         <article className="task" key={data.id}>
       
-          <div class="details">
-            <id class="id">Task ID: {data.id}</id> 
-            <address class="address">Campus: {data.campus}</address>
+          <div className="details">
+            <id className="id">Task ID: {data.id}</id> 
+            <address className="address">Campus: {data.campus}</address>
             <p>Title: {data.title}</p>
-            <strong class="price">Price: {data.price}</strong><p>
-            <strong class="status">Status: {data.status}</strong></p>
+            <strong className="price">Price: {data.price}</strong><p>
+            <strong className="status">Status: {data.status}</strong></p>
             <p>Description: {data.description}</p>
             <p>Contact: {data.contact}</p>
-            <button class="go-back" onClick={() => routerContext.history.goBack()}>Go Back</button>
+            <button className="go-back" onClick={() => routerContext.history.goBack()}>Go Back</button>
           </div>
         </article>
       </section>
