@@ -51,6 +51,17 @@ module.exports = {
     secret: async (req, res, next) => {
         console.log('I managed to get here!')
         res.json({ secret: "resource" })
+    },
+    // get authenticated user data
+    data: async (req, res, next) => {
+        // const user = await User.findOne({ token: req.token })
+        // res.json({ user })
+        // res.json({
+        //     message: 'You made it to the secure route',
+        //     user: req.user,
+        //     token: req.query.secret_token
+        // })
+        res.json(req.user)
     }
 
 }
