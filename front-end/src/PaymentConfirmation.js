@@ -8,7 +8,7 @@ const PaymentConfirmation = (props) => {
         <article>    
             <button onClick={handleGoBack}> Go Back </button>
             <h1>Welcome!</h1>
-            <p1>Congratulations! Your payment method has been saved.</p1>
+            <p>Congratulations! Your payment method has been saved.</p>
             </article>
     )
 }
