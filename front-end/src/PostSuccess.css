@@ -1,0 +1,5 @@
+.success{
+    display: grid;
+    margin-top: 10%;
+    place-items: center;
+}
