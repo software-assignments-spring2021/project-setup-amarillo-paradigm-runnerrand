@@ -8,6 +8,8 @@ import Profile from './Profile';
 import AccountDetails from './AccountDetails';
 import NavBar from './Navbar';
 import Signup from './Signup'
+import SignupSuccess from './SignupSuccess'
+import PostSuccess from './PostSuccess'
 import Post from './Post'
 import ResetPassword from './ResetPassword'
 import PaymentMethod from './PaymentMethod';
@@ -80,6 +82,16 @@ const App = (props)=> {
           <NavBar />
           <Signup />
           </Route>  
+
+        <Route exact path="/SignupSuccess" >
+          <NavBar />
+          <SignupSuccess />
+        </Route> 
+
+        <Route exact path="/PostSuccess" >
+          <NavBar />
+          <PostSuccess />
+        </Route>  
 
         <Route exact path="/Profile" >
           <NavBar />
