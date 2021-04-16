@@ -3,7 +3,7 @@ import profile from './profile.png'
 
 const ProfilePicture = (props) =>{
     return (
-        <img src={profile} class="profilePic"/>
+        <img src={profile} className="profilePic"/>
     )
 }
 

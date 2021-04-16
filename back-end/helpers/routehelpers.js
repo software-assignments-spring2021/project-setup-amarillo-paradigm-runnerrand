@@ -20,6 +20,15 @@ module.exports = {
             lastName: Joi.string().required(),
             email: Joi.string().email().required(),
             password: Joi.string().required()
+        }),
+        postSchema: Joi.object().keys({
+            title: Joi.string().required(),
+            category: Joi.string().required(),
+            campus: Joi.string().required(),
+            address: Joi.string().required(),
+            duedate: Joi.date().required(),
+            budget: Joi.number().required(),
+            details: Joi.string().required(),
         })
     }
 

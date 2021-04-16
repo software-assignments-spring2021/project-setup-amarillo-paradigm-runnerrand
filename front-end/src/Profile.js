@@ -13,7 +13,7 @@ const Profile = (props) =>{
         <section className="profile">
             <ProfilePicture> </ProfilePicture>
             <p></p>
-            <username>{props.username}</username>
+            {/* <username>{props.username}</username> */}
             <p></p>
             <button onClick={handleAccountDetail}>Account Details</button>
             <p></p>
@@ -44,6 +44,7 @@ const handleReset = ()=>{
 
 const handleLogOut = ()=>{
     // redirect to log out page
+    localStorage.removeItem("token")
     window.location.href = './Home';
 }
 

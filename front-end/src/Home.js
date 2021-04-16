@@ -57,7 +57,7 @@ const Home = (props) => {
       <div>
         <div className="searchBar">
             <p></p>
-            <p1> Enter a location: </p1>
+            <p> Enter a location: </p>
             <input type="text" id="SearchBar" name="LocationSearch" placeholder="Enter a location"/>
        
             <p></p>

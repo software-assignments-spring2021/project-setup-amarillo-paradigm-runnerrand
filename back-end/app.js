@@ -41,6 +41,7 @@ mongoose.set('useCreateIndex', true);
 
 // Routes
 app.use('/users', require('./routes/users'))
+app.use('/posts', require('./routes/posts'))
 
 
 app.get("/", (req, res) => {
@@ -63,62 +64,62 @@ app.post('/post-task', (req, res, next) => {
   res.json(newTask)
 })
 
-app.post('/register', (req, res, next) => {
-  if (req.body.password_confirm !== req.body.password) {
-		return res.status(400).json({error: 'The passwords entered are not the same!'});
-  }
-  else{
-    const newUser = {
-      status: "success!",
-      message: "congratulations on sending us this data!",
-      data: {
-        username: req.body.username,
-        first: req.body.first,
-        last: req.body.last,
-        email: req.body.email,
-        phone_number: req.body.phone_number,
-        password: req.body.password,
-        passwordconfirm: req.body.password_confirm
-      },
-    }
-    res.json(newUser)
-    console.log(newUser)
-    // User.findOne({ username: req.body.email }).then(user => {
-		// 	if (user) {
-		// 		return res.status(400).json({error: 'An account already exists with that email. Please use a different email.'})
-		// 	} 
-    //   else {
-		// 		User.create(newUser, function(err, user) {
-		// 			if (err) {
-		// 				console.log(err);
-		// 				return res.status(500).json({error: 'Error creating user. Please try again'});
-		// 			} else {
-		// 				console.log('user', user);
-		// 				console.log('Successfully created user');
-		// 				req.logIn(user, function(err) {
-		// 					if (err) {
-		// 					  return res.status(500).json({error: 'Issue with Passport authentication'});
-		// 					}
-		// 					return res.json({success: 'Successfully created user'});
-		// 				});
-		// 			}
-		// 		})
-			// }
-		// })
-  }
-})
+// app.post('/register', (req, res, next) => {
+//   if (req.body.password_confirm !== req.body.password) {
+// 		return res.status(400).json({error: 'The passwords entered are not the same!'});
+//   }
+//   else{
+//     const newUser = {
+//       status: "success!",
+//       message: "congratulations on sending us this data!",
+//       data: {
+//         username: req.body.username,
+//         first: req.body.first,
+//         last: req.body.last,
+//         email: req.body.email,
+//         phone_number: req.body.phone_number,
+//         password: req.body.password,
+//         passwordconfirm: req.body.password_confirm
+//       },
+//     }
+//     res.json(newUser)
+//     console.log(newUser)
+//     // User.findOne({ username: req.body.email }).then(user => {
+// 		// 	if (user) {
+// 		// 		return res.status(400).json({error: 'An account already exists with that email. Please use a different email.'})
+// 		// 	} 
+//     //   else {
+// 		// 		User.create(newUser, function(err, user) {
+// 		// 			if (err) {
+// 		// 				console.log(err);
+// 		// 				return res.status(500).json({error: 'Error creating user. Please try again'});
+// 		// 			} else {
+// 		// 				console.log('user', user);
+// 		// 				console.log('Successfully created user');
+// 		// 				req.logIn(user, function(err) {
+// 		// 					if (err) {
+// 		// 					  return res.status(500).json({error: 'Issue with Passport authentication'});
+// 		// 					}
+// 		// 					return res.json({success: 'Successfully created user'});
+// 		// 				});
+// 		// 			}
+// 		// 		})
+// 			// }
+// 		// })
+//   }
+// })
 
-app.post('/log-in', (req, res, next) => {
-  const logIn = {
-    status: "success!",
-    message: "congratulations on sending us this data!",
-    data: {
-      username: req.body.username,
-      password: req.body.password,
-    },
-  }
-  res.json(logIn)
-})
+// app.post('/log-in', (req, res, next) => {
+//   const logIn = {
+//     status: "success!",
+//     message: "congratulations on sending us this data!",
+//     data: {
+//       username: req.body.username,
+//       password: req.body.password,
+//     },
+//   }
+//   res.json(logIn)
+// })
 
 // Task Proxy API
 app.get("/tasks_api", (req, res, next) => {

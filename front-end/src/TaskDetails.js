@@ -7,9 +7,10 @@ import { Link } from 'react-router-dom'
 const TaskDetails = (props) => {
 
     const [data, setData] = useState([])
+    const [token,setToken] = useState(null)
 
   useEffect(() => {
-
+    setToken(localStorage.getItem("token"))
     axios.get(`http://localhost:3000/tasks_api/${props.taskId}`)
       .then((response) => {
         console.log(response.data)
@@ -26,6 +27,13 @@ const TaskDetails = (props) => {
   const imgSrc = `https://picsum.photos/200?id=${props.taskId}`;
 
   const routerContext = useContext(__RouterContext);
+  const handleAcceptButton = ()=>{
+        if(token === null){
+            window.location.href = '/login';
+        }else{
+            window.location.href = '/Home';
+        }
+    }
   console.log('context object:', routerContext);
     return(
         <div>
@@ -43,16 +51,13 @@ const TaskDetails = (props) => {
 
             <div>
                 <button onClick={handleAcceptButton}>Accept</button> 
-                <button class="go-back" onClick={() => routerContext.history.goBack()}>Go Back</button>
+                <button className="go-back" onClick={() => routerContext.history.goBack()}>Go Back</button>
             </div>
           
 
         </div>
 
     )
-}
-const handleAcceptButton = ()=>{
-    window.location.href = '/Home';
 }
 
 

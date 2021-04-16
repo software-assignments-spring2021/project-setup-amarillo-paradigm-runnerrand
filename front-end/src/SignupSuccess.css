@@ -1,0 +1,9 @@
+.success{
+    display: grid;
+    margin-top: 10%;
+    place-items: center;
+}
+
+/* .container.success h2{
+    color: #4CAF50
+} */
