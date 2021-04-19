@@ -42,5 +42,17 @@ module.exports = {
             }
          });
     },
+    //pagination
+    show_posts: async (req, res, next) => {
+        console.log("Hello");
+        Post.find({}, (err, posts) => {
+            if(err) {
+              console.log(err);
+            } else {
+                // res.status(200).json({currentUser: req.user, posts: posts});
+                res.status(200).json({posts});
+            }
+         });
+    },
 
 }
