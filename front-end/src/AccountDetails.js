@@ -1,5 +1,6 @@
 import './AccountDetails.css';
 import ProfilePicture from './ProfilePicture';
+import Button from 'react-bootstrap/Button';
 
 const accountDetails = (props) => {
     const accountInfo ={
@@ -21,7 +22,7 @@ const accountDetails = (props) => {
                 {/* <input name="my_files" type="file" multiple />
                 <br></br>
                 <input type="submit" value="Submit!!!" /> */}
-                <button onClick={handleProfilePicture}>Edit Profile Picture</button>
+                <button onClick={handleProfilePicture} id="changeProfilePic">Edit Profile Picture</button>
                 <p></p>
                 <h4>First Name: {accountInfo.firstName}</h4>
                 <p></p>
@@ -41,7 +42,7 @@ const accountDetails = (props) => {
 }
 
 const handleProfilePicture = (props) =>{
-    <input name="edit_profile" type="file" multiple />
+    window.location.href = '/ChangeAvatar'
 }
 
 const handleEditDetails=(props)=>{

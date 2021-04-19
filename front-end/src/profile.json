@@ -1,0 +1,47 @@
+[
+    {
+        "username": "zijiahu",
+        "firstname": "Zijia",
+        "lastname": "Hu",
+        "email": "zijiahu@xxx.com",
+        "phonenumber": "123-456-7890",
+        "zip": "10001",
+        "password": "123456"
+    },
+    {
+        "username": "gatou",
+        "firstname": "Itsuka",
+        "lastname": "Gatou",
+        "email": "ItsukaGatou@dayrep.com",
+        "phonenumber": "296-50-7890",
+        "zip": "10001",
+        "password": "123456"
+    },
+    {
+        "username": "Woon1972",
+        "firstname": "Tia",
+        "lastname": "Hayward",
+        "email": "TiaHayward@jourrapide.com",
+        "phonenumber": "347-885-1012",
+        "zip": "10001",
+        "password": "fah2Foox9"
+    },
+    {
+        "username": "Onausucan1963",
+        "firstname": "Abbie",
+        "lastname": "Shah",
+        "email": "AbbieShah@jourrapide.com",
+        "phonenumber": "843-444-7714",
+        "zip": "10001",
+        "password": "ceQu3fiequ"
+    },
+    {
+        "username": "Penated47",
+        "firstname": "Maya",
+        "lastname": "Arnold",
+        "email": "MayaArnold@armyspy.com",
+        "phonenumber": "515-284-2258",
+        "zip": "10001",
+        "password": "Oozien4aic1"
+    }
+]

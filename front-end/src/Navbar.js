@@ -55,6 +55,11 @@ const NavBar = () => {
                         <ButtonGroup className="mr-2">
                             <Link to="/signup"><Button variant="outline-light">Signup</Button></Link>
                         </ButtonGroup>
+                        
+                        {/* only for the purpose of debugging */}
+                        <ButtonGroup className="mr-2">
+                            <Link to="/profile"><Button variant="outline-light">Profile</Button></Link>
+                        </ButtonGroup>
                     </>
                     :
                     <>

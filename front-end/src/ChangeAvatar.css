@@ -1,0 +1,14 @@
+.changeAvatar{
+    background-color: white;
+    border: 1px solid #FFF;
+    transition: all .3s;
+    font-size: 1rem;
+    padding: 8px 16px;
+}
+
+.changeAvatar:hover{
+    border: 1px solid transparent;
+    font-size: 1rem!important;
+    padding: 8px 16px!important;
+    background-color: #FFF;
+}

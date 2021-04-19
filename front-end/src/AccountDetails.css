@@ -17,6 +17,24 @@
     text-align: center;
 }
 
+#changeProfilePic{
+    background-color: white;
+    font-family: georgia;
+    color: black;
+    font-size: 10px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#changeProfilePic:hover {
+    background-color: #909090;
+    font-family: georgia;
+    color: black;
+    font-size: 10px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
 .button {
     background-color: white;
     font-family: georgia;
