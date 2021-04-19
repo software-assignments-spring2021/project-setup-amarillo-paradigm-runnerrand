@@ -11,6 +11,7 @@ module.exports = {
         const duedate = req.value.body.duedate
         const budget = req.value.body.budget
         const details = req.value.body.details
+        const owner = null
 
         // Check for existing post
         const postTitle = await Post.findOne({ title: req.value.body.title })
@@ -26,7 +27,8 @@ module.exports = {
             address,
             duedate,
             budget,
-            details
+            details,
+            owner
         })
         await newPost.save()
 

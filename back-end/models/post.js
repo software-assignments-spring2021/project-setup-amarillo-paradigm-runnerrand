@@ -12,6 +12,9 @@ const postSchema = new Schema({
         required: true,
         unique: true,
     },
+    owner: {
+        type: String,
+    },
     category: {
         type: String,
         required: true

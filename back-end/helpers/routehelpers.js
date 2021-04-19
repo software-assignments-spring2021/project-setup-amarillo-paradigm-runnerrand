@@ -23,12 +23,13 @@ module.exports = {
         }),
         postSchema: Joi.object().keys({
             title: Joi.string().required(),
+            // owner: Joi.string()required(),
             category: Joi.string().required(),
             campus: Joi.string().required(),
             address: Joi.string().required(),
             duedate: Joi.date().required(),
             budget: Joi.number().required(),
-            details: Joi.string().required(),
+            details: Joi.string().required()
         })
     }
 
