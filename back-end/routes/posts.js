@@ -13,6 +13,6 @@ router.route('/auth_user')
     .get(passport.authenticate('jwt', { session: false}), PostsController.get_auth_user_posts)
 
 router.route('/get')
-    .get(PostsController.show_p·osts)
+    .get(PostsController.show_posts)
 
 module.exports = router
