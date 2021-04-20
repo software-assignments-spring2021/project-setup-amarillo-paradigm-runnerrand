@@ -1,4 +1,4 @@
-import "./ResetPassword.css ";
+import "./ResetPassword.css";
 import React, {useState, useEffect, Component} from 'react';
 import { NavLink } from "react-router-dom";
 import axios from 'axios';
@@ -55,10 +55,12 @@ return (
                 <div className='incorrectPassword'> 
                 <p>{incorrectPassword}</p>
                 </div>
-                
                 <p>Enter your new password:</p>
                 <input type='text' name='newPassword' onChange={handleNewData}/>
+                <p>Confirm your new password:</p>
+                <input type='text' name='newPassword' onChange={handleNewData}/>
                 <br/>
+                <p></p>
                 <button className='button1' onClick={savePassword}>Save</button>
                 <div className='correctPassword'> 
                 <p>{correctPassword}</p>
