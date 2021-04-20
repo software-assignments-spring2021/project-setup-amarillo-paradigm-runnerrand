@@ -42,11 +42,14 @@ const AccountDetails = (props) => {
 }
 
 const handleProfilePicture = (props) =>{
-    window.location.href = 'AccountDetails/ChangeAvatar'
+    // window.location.href = '/AccountDetails/ChangeAvatar'
+    window.location.href = '/AccountDetails/AvatarChanger'
+
 }
 
 const handleEditDetails=(props)=>{
     // redirect to account details editing page
+    window.location.href = '/AccountDetails/ChangeAccountDetails'
 }
 
 const handleGoBack=(props)=>{

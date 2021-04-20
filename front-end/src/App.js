@@ -21,6 +21,8 @@ import TaskListGen from './TaskListGen'
 import TaskBrowser from './TaskBrowser'
 import MyTasks from './MyTasks'
 import ChangeAvatar from './ChangeAvatar'
+import AvatarChanger from './AvatarChanger'
+import ChangeAccountDetails from "./ChangeAccountDetails"
 
 
 const TaskWrapper = ({ match }) => {
@@ -139,6 +141,16 @@ const App = (props)=> {
         <Route exact path="/AccountDetails/ChangeAvatar" >
           <NavBar />
           <ChangeAvatar />
+        </Route>
+
+        <Route exact path="/AccountDetails/AvatarChanger" >
+          <NavBar />
+          <AvatarChanger />
+        </Route>
+
+        <Route exact path="/AccountDetails/ChangeAccountDetails" >
+          <NavBar />
+          <ChangeAccountDetails />
         </Route>
 
       </Router>
