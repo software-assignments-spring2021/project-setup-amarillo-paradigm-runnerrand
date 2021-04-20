@@ -27,7 +27,28 @@ router.route("/user/:id").get(async (req, res) => {
    } catch (error) {
     res.status(500).json({ message: "error: find all listings under specific user" });
    }
-    
+  });
+
+//create new post
+router.route("/new").post(async (req, res) => {
+   //try {
+    const L = {
+        author: req.body.author,
+        status: req.body.status,
+        title: req.body.title,
+        owner:req.body.owner,
+        campus: req.body.campus,
+        category: req.body.category,
+        address: req.body.address,
+        duedate: req.body.duedate,
+        budget:req.body.budget,
+        details: req.body.details,
+      };
+    let newPost = await Post.create(L);
+    res.json(newPost);   
+  // } catch (error) {
+//res.status(500).json({ message: "error: find all listings under specific user" });
+   //}
   });
 
 module.exports = router
