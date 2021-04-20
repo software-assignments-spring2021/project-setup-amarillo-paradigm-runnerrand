@@ -2,7 +2,7 @@ import './AccountDetails.css';
 import ProfilePicture from './ProfilePicture';
 import Button from 'react-bootstrap/Button';
 
-const accountDetails = (props) => {
+const AccountDetails = (props) => {
     const accountInfo ={
         userName: "null",
         firstName : "null", 
@@ -42,7 +42,7 @@ const accountDetails = (props) => {
 }
 
 const handleProfilePicture = (props) =>{
-    window.location.href = '/ChangeAvatar'
+    window.location.href = 'AccountDetails/ChangeAvatar'
 }
 
 const handleEditDetails=(props)=>{
@@ -54,4 +54,4 @@ const handleGoBack=(props)=>{
     window.location.href = '../Profile'
 }
 
-export default accountDetails;
+export default AccountDetails;

@@ -20,6 +20,7 @@ import PostConfirmation from './PostConfirmation'
 import TaskListGen from './TaskListGen'
 import TaskBrowser from './TaskBrowser'
 import MyTasks from './MyTasks'
+import ChangeAvatar from './ChangeAvatar'
 
 
 const TaskWrapper = ({ match }) => {
@@ -133,6 +134,11 @@ const App = (props)=> {
         <Route exact path="/Post" >
           <NavBar />
           <Post />
+        </Route>
+
+        <Route exact path="/AccountDetails/ChangeAvatar" >
+          <NavBar />
+          <ChangeAvatar />
         </Route>
 
       </Router>
