@@ -52,7 +52,7 @@ router.route("/user/:id/completed").get(async (req, res) => {
 
 //create new post
 router.route("/new").post(async (req, res) => {
-   try {
+  // try {
     const L = {
         author: req.body.author,
         status: req.body.status,
@@ -67,9 +67,8 @@ router.route("/new").post(async (req, res) => {
       };
     let newPost = await Post.create(L);
     res.json(newPost);   
-   } catch (error) {
-    res.status(500).json({ message: "error: find all listings under specific user" });
-}
+   //} catch (error) {
+    //res.status(500).json({ message: "error: find all listings under specific user" });}
   });
 
 module.exports = router
