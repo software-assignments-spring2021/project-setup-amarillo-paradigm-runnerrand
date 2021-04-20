@@ -29,9 +29,30 @@ router.route("/user/:id").get(async (req, res) => {
    }
   });
 
+//get all scheduled listings under specific user
+router.route("/user/:id/scheduled").get(async (req, res) => {
+    try {
+     let findPosts = await Post.find({ author: req.params.id,status:"scheduled" });
+     res.json(findPosts);
+        
+    } catch (error) {
+     res.status(500).json({ message: "error: find scheduled listings under specific user" });
+    }
+   });
+//get all completed listings under specific user
+router.route("/user/:id/completed").get(async (req, res) => {
+    try {
+     let findPosts = await Post.find({ author: req.params.id,status:"completed" });
+     res.json(findPosts);
+        
+    } catch (error) {
+     res.status(500).json({ message: "error: find completed listings under specific user" });
+    }
+   });
+
 //create new post
 router.route("/new").post(async (req, res) => {
-   //try {
+   try {
     const L = {
         author: req.body.author,
         status: req.body.status,
@@ -46,9 +67,9 @@ router.route("/new").post(async (req, res) => {
       };
     let newPost = await Post.create(L);
     res.json(newPost);   
-  // } catch (error) {
-//res.status(500).json({ message: "error: find all listings under specific user" });
-   //}
+   } catch (error) {
+    res.status(500).json({ message: "error: find all listings under specific user" });
+}
   });
 
 module.exports = router
