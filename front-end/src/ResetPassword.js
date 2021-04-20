@@ -1,4 +1,4 @@
-import "./ResetPassword.css";
+import "./ResetPassword.css ";
 import React, {useState, useEffect, Component} from 'react';
 import { NavLink } from "react-router-dom";
 import axios from 'axios';
@@ -47,8 +47,8 @@ return (
   <div className="ResetPassword">
     
       <h1>Reset Password</h1>
-      <section className="main-content">
-          <form action="/Reset-password" method="POST">
+      <section className="main_content">
+          <form action="/Reset_password" method="POST">
                 <p>Enter your current password: </p>
                 <input type='text' name='currentPassword' onChange={handleOldData} />
                 <br/>
