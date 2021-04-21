@@ -21,7 +21,7 @@ router.route('/get')
 //get all listings under specific user
 router.route("/home").get(async (req, res) => {
   try {
-   let findPosts = await Post.find({ author: req.params.id });
+   let findPosts = await Post.find({ status:"new" });
    res.json(findPosts);
       
   } catch (error) {
