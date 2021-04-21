@@ -4,23 +4,40 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import './MyTasks.css';
 
-
-
-function MyTasks() {
+const MyTasks = (props) => {
     const [tasks, setTasks] = useState(null);
-  
+    const [data, setData] = useState([])
+    //const [token,setToken] = useState(null)
+    const [user,setUser] = useState(null)
+
+    const token2 = localStorage.getItem("token")
+    fetch('http://127.0.0.1:3000/users/auth_user',{
+        method:"GET",
+        headers:{
+            "Content-Type":"application/json",
+            "Authorization":token2
+        },
+    }).then(res => res.json())
+    .then(response => {
+        console.log(response)
+        setUser(response)
+        //setIsLoading(false)
+        // return <Redirect to="/profile" />
+    }).catch(err => {
+        console.log(err)
+        //(false)
+        localStorage.removeItem("token")
+    })
+
     const fetchDataScheduled = async () => {
-      const response = await axios.get(
-        'http://localhost:3000/mytasks_scheduled'
-      );
-  
+      
+      const response= await axios.get(`http://localhost:3000/posts/user/${user._id}/scheduled`)
       setTasks(response.data);
     };
 
     const fetchDataCompleted = async () => {
-        const response = await axios.get(
-          'http://localhost:3000/mytasks_completed/'
-        );
+      const response= await axios.get(`http://localhost:3000/posts/user/${user._id}/completed`)
+
     
         setTasks(response.data);
       };
@@ -41,10 +58,7 @@ function MyTasks() {
     
           {/* Display data from API */}
           <div className="tasks">
-              
-
-
-              
+            
             {tasks &&
               tasks.map((task, index) => {
     
@@ -70,4 +84,5 @@ function MyTasks() {
         </div>
       );
     }
-    export default MyTasks;
+
+export default MyTasks;
