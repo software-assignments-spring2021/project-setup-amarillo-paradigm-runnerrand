@@ -49,7 +49,7 @@ const MyTasks = (props) => {
           {/* Fetch data from API */}
           <div>
             <button className="fetch-button" onClick={fetchDataScheduled}>
-              Scheduled Tasks
+              Current Tasks
             </button><span> </span>  
             <button className="fetch-button" onClick={fetchDataCompleted}>
               Completed Tasks
