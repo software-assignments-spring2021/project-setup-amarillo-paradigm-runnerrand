@@ -32,7 +32,7 @@ router.route("/user/:id").get(async (req, res) => {
 //get all scheduled listings under specific user
 router.route("/user/:id/scheduled").get(async (req, res) => {
     try {
-     let findPosts = await Post.find({ author: req.params.id,status:"scheduled" });
+     let findPosts = await Post.find({ author: req.params.id,status:"posted" });
      res.json(findPosts);
         
     } catch (error) {
