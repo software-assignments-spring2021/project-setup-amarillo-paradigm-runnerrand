@@ -18,6 +18,16 @@ router.route('/auth_user')
 router.route('/get')
     .get(PostsController.show_posts)
 
+//get specific post
+router.route("/get/:id").get(async(req,res)=>{
+  try{ 
+    let findPost = await Post.find({ _id: req.params.id });
+    res.json(findPost);}
+    catch(error){
+      res.status(500).json({ message: "error: find specific listing" });
+    }
+})
+
 //get all listings under specific user
 router.route("/user/:id").get(async (req, res) => {
    try {
@@ -27,7 +37,7 @@ router.route("/user/:id").get(async (req, res) => {
    } catch (error) {
     res.status(500).json({ message: "error: find all listings under specific user" });
    }
-  });
+});
 
 //get all scheduled listings under specific user
 router.route("/user/:id/scheduled").get(async (req, res) => {
