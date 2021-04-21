@@ -12,7 +12,7 @@ const Home = (props) => {
   const [tasks, setTasks] = useState(null)
 
   useEffect(() => {
-    axios.get('http://localhost:3000/tasks_api')
+    axios.get('http://localhost:3000/posts/home')
       .then((response) => {
         console.log(response.data);
         setTasks(response.data);
