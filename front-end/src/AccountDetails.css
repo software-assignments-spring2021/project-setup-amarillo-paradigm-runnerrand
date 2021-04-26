@@ -1,4 +1,8 @@
-
+.account.flex{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
 .accountDetails{
     /* min-height: 100vh; */
     display: flex;
@@ -7,6 +11,20 @@
     justify-content: center;
     /* font-size: calc(10px + 2vmin); */
     font-family: geogia;
+}
+
+.accountDetails .fields{
+    margin: 2% 0px;
+    width: 50%;
+}
+.accountDetails .fields h4{
+    display: flex;
+    justify-content: space-between;
+}
+
+.placeholder{
+    width: 150px;
+    margin-bottom: 15px;
 }
 
 #username {
