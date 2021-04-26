@@ -128,8 +128,8 @@ const AccountDetails = (props) => {
                     <h4><strong>First Name:</strong>  {accountInfo?.firstName}</h4>
                     <h4><strong>Last Name:</strong> {accountInfo?.lastName}</h4>
                     <h4><strong>Email:</strong> {isEdit ? <input type="email" placeholder={accountInfo?.email} defaultValue={accountInfo?.email} onChange={updateEmail} /> : accountInfo?.email}</h4>
-                    <h4><strong>Phone Number:</strong> {isEdit ? <input type="tel" placeholder={accountInfo?.phoneNumber || "N/A"} defaultValue={accountInfo?.phoneNumber || ""} onChange={updatePhone}/> : accountInfo?.phoneNumber || "N/A"}</h4>
-                    <h4><strong>Zip Code:</strong> {isEdit ? <input type="number" placeholder={accountInfo?.zipCode || "N/A"} defaultValue={accountInfo?.zipCode || ""} onChange={updateZip}/> : accountInfo?.zipCode || "N/A"}</h4>
+                    <h4><strong>Phone Number:</strong> {isEdit ? <input type="tel" placeholder={accountInfo?.phone || "N/A"} defaultValue={accountInfo?.phone || ""} onChange={updatePhone}/> : accountInfo?.phone || "N/A"}</h4>
+                    <h4><strong>Zip Code:</strong> {isEdit ? <input type="number" placeholder={accountInfo?.zip || "N/A"} defaultValue={accountInfo?.zip || ""} onChange={updateZip}/> : accountInfo?.zip || "N/A"}</h4>
                 </div>
                 {
                     isEdit ? 
