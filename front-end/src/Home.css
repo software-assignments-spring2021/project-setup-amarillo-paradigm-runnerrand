@@ -8,6 +8,28 @@
     font-size: calc(10px + 2vmin);
 }
 
+#home h1{
+    margin: 2% 0px;
+}
+#home .form{
+    margin: 0px;
+    margin-bottom: 2%;
+}
+#home h3,#home h1{
+    /* text-align: center; */
+    color: #3f51b5;
+    font-size: 2rem;
+}
+
+#home .tasks{
+    margin-top: 2%;
+}
+
+.nav-item.nav-link.active{
+    background-color: #3f51b5!important;
+    color: #FFF!important;
+}
+
 .body{
     background-color: #f9fafc;
     min-height: 100vh;

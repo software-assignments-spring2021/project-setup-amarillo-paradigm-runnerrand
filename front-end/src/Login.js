@@ -16,24 +16,9 @@ const Login = () => {
 
     const handleLogin = (e) => {
         e.preventDefault()
-        // fetch('http://127.0.0.1:3100/users/signin',{
-        //     method:"POST",
-        //     headers:{
-        //         "Content-Type":"application/json"
-        //     },
-        //     body:JSON.stringify({
-        //         email,
-        //         password,
-        //     })
-        // }).then(res => res.json())
-        // .then(response => {
-        //     console.log(response)
-        //     localStorage.setItem("token",response.token)
-        //     window.location.href = "/profile"
-        // })
         Axios({
             method:'post',
-            url:'http://127.0.0.1:3000/users/signin',
+            url:`${process.env.REACT_APP_BACKEND}/users/signin`,
             data:{
                 email,
                 password,
@@ -49,7 +34,6 @@ const Login = () => {
             else if(err.response.status === 400){
                 setError("Please Fill All Required Fields")
             }
-            console.log(err.response)
         })
 
     }
