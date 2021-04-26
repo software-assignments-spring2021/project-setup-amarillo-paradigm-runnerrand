@@ -66,13 +66,17 @@ const Home = (props) => {
     return(
         <React.Fragment>
             <div id="home">
-                <div className="searchBar">
+                <div className="help">
                     <h1>What do you need help for ? </h1>
                     <div className="form">
-                        <p> Enter a location: </p>
-                        <input type="text" id="SearchBar" name="LocationSearch" placeholder="Enter a location"/>
-                        <p>Search Jobs</p>            
-                        <input type="text" id="JobSearchBar" name="JobSearch" placeholder="Search for jobs" value={search} onChange={handleOnSearch}/>
+                        <span>
+                            <p> Enter a location: </p>
+                            <input type="text" id="SearchBar" name="LocationSearch" placeholder="Enter a location"/>
+                        </span>
+                        <span>
+                            <p>Search Jobs</p>            
+                            <input type="text" id="JobSearchBar" name="JobSearch" placeholder="Search for jobs" value={search} onChange={handleOnSearch}/>
+                        </span>
                     </div>
                 </div>
 
