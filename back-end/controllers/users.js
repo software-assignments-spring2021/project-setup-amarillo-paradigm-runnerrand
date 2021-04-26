@@ -133,7 +133,7 @@ module.exports = {
     getBalance: async (req,res,next) => {
         Post.find({'owner':req.user.email,"status":"completed"}).exec(function (err,posts){
             const earnings = posts.reduce( ( sum, { budget } ) => sum + budget , 0)
-            Post.find({'_id':req.user._id,"status":"completed"}).exec(function (err,posts){
+            Post.find({'author':req.user._id,"status":"completed"}).exec(function (err,posts){
                 const spend = posts.reduce( ( sum, { budget } ) => sum + budget , 0)
                 res.status(200).json({earnings,spend});
             })
