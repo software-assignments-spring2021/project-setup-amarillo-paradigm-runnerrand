@@ -8,40 +8,70 @@ import {Redirect} from 'react-router';
 const ResetPassword = (props) => {
   const [oldPw, setOldPw] = useState("");
   const [newPw, setNewPw] = useState("");
-  const [incorrectPassword, setIncorrectPassword] = useState("");
-  const [correctPassword, setCorrectPassword] = useState("");
+  const [cnfrmPw, setCnfrmPw] = useState("");
+  const [msg, setMsg] = useState("");
+  const [error,setError] = useState(false)
 
   let dataArray = {
     oldPassword: oldPw,
     newPassword: newPw,
-    userID: "iamauser1234"
   }
 
-  function savePassword(p) {
-    setIncorrectPassword("");
-    console.log(dataArray)
-    p.preventDefault();
-    axios.post(process.env.REACT_APP_BACKEND + "/ResetPassword/", dataArray, {withCredentials: true})
-        .then ((res) => {
+  function savePassword(e) {
+    e.preventDefault();
+    if(newPw === cnfrmPw){
+        setMsg("");
+        setError(false)
+        console.log(dataArray)
+        const token = localStorage.getItem("token")
+        axios({
+            method:'post',
+            url:`${process.env.REACT_APP_BACKEND}/users/reset-password`,
+            data:dataArray,
+            headers:{
+                Authorization:token
+            }
+        }).then(res => {
             console.log(res);
             if (res.status === 200) {
-              console.log("Reset password success");
-            //   setCorrectPassword("Password reset successfully!")
-            window.location.href = './PasswordResetConfirmation';
+                if(res.data.status === 401){
+                    setError(true)
+                    setMsg(res.data.msg)
+                }else{
+                    // window.location.href = './PasswordResetConfirmation';
+                    setMsg("Password Changed Successfully!")
+                    console.log("Reset password success");
+                }
             }
         })
         .catch( err => {
+            setError(true)
             console.error(err);
-            setIncorrectPassword("Incorrect current password");
+            setMsg("Incorrect current password");
         })
+    }
 }
-function handleOldData(p) {
-  setOldPw(p.target.value)
+function handleOldData(e) {
+  setOldPw(e.target.value)
 }
 
-function handleNewData(p) {
-  setNewPw(p.target.value)
+function handleNewData(e) {
+  setNewPw(e.target.value)
 }
+
+function handleCnfrmPw(e) {
+    setCnfrmPw(e.target.value)
+}
+
+useEffect(() => {
+    if(newPw.length !== 0 && cnfrmPw.length !== 0){
+        if(newPw !== cnfrmPw){
+            setMsg("Passwords Do Not Match")
+        }else{
+            setMsg("")
+        }
+    }
+}, [newPw,cnfrmPw])
 
 return (
   <div className="ResetPassword">
@@ -50,20 +80,17 @@ return (
       <section className="main_content">
           <form action="/Reset_password" method="POST">
                 <p>Enter your current password: </p>
-                <input type='text' name='currentPassword' onChange={handleOldData} />
+                <input type='password' name='currentPassword' onChange={handleOldData} />
                 <br/>
-                <div className='incorrectPassword'> 
-                <p>{incorrectPassword}</p>
-                </div>
                 <p>Enter your new password:</p>
-                <input type='text' name='newPassword' onChange={handleNewData}/>
+                <input type='password' name='newPassword' onChange={handleNewData}/>
                 <p>Confirm your new password:</p>
-                <input type='text' name='newPassword' onChange={handleNewData}/>
+                <input type='password' name='confirmPassword' onChange={handleCnfrmPw}/>
                 <br/>
                 <p></p>
+                <p className={error ? "text-danger":"text-success"}>{msg}</p>
                 <button className='button1' onClick={savePassword}>Save</button>
                 <div className='correctPassword'> 
-                <p>{correctPassword}</p>
                 </div>
                 </form>
       </section>

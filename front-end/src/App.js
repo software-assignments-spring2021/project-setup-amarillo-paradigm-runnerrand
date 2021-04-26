@@ -20,6 +20,10 @@ import PostConfirmation from './PostConfirmation'
 import TaskListGen from './TaskListGen'
 import TaskBrowser from './TaskBrowser'
 import MyTasks from './MyTasks'
+import MyTasksPosted from "./MyTasksPosted"
+
+import AccountDetailsSuccess from "./AccountDetailsSuccess"
+import TaskAcceptSuccess from "./TaskAcceptSuccess"
 
 
 const TaskWrapper = ({ match }) => {
@@ -86,8 +90,18 @@ const App = (props)=> {
         <Route exact path="/SignupSuccess" >
           <NavBar />
           <SignupSuccess />
+        </Route>
+
+        <Route exact path="/AccountDetailsSuccess" >
+          <NavBar />
+          <AccountDetailsSuccess />
         </Route> 
 
+        <Route exact path="/TaskAcceptSuccess" >
+          <NavBar />
+          <TaskAcceptSuccess />
+        </Route> 
+        
         <Route exact path="/PostSuccess" >
           <NavBar />
           <PostSuccess />
@@ -111,6 +125,11 @@ const App = (props)=> {
         <Route exact path="/mytasks" >
           <NavBar />
           <MyTasks />
+        </Route>
+
+        <Route exact path="/mytasksposted" >
+          <NavBar />
+          <MyTasksPosted />
         </Route>
 
         <Route path="/display_mytasks/:id" component={TaskWrapper} />

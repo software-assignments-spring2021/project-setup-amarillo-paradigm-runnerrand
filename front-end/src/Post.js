@@ -14,8 +14,7 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 function Post() {
-    // const url ="http://localhost:3000/post-task"
-    const url ="http://localhost:3000/posts/create"
+    const url =`${process.env.REACT_APP_BACKEND}/posts/create`
     const [data, setData] = useState({
         title: "",
         category: "",
@@ -63,9 +62,9 @@ function Post() {
                     <p></p>
                     <select name="" id="category" className="taskDetails" onChange={(e) => handle(e)} required >
                         <option value="" disabled selected hidden>Category</option>
-                        <option value="Shopping">Shopping</option>
-                        <option value="Tutoring">Tutoring</option>
-                        <option value="Delivery">Delivery</option>
+                        <option value="shopping">Shopping</option>
+                        <option value="tutoring">Tutoring</option>
+                        <option value="delivery">Delivery</option>
                     </select>
                     <p></p>
                     <select name="" onChange={(e) => handle(e)} id="campus" className="taskDetails" required>

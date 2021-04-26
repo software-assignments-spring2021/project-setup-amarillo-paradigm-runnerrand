@@ -20,27 +20,11 @@ const Signup = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault()
-        // fetch('http://127.0.0.1:3100/users/signup',{
-        //     method:"POST",
-        //     headers:{
-        //         "Content-Type":"application/json"
-        //     },
-        //     body:JSON.stringify({
-        //         firstName,
-        //         lastName,
-        //         email,
-        //         password,
-        //     })
-        // }).then(res => res.json())
-        // .then(response => {
-        //     console.log(response)
-        // })
-        // const token = localStorage.getItem("token")
 
         if(password === passwordConfirm){
             Axios({
                 method:'post',
-                url:'http://127.0.0.1:3000/users/signup',
+                url:`${process.env.REACT_APP_BACKEND}/users/signup`,
                 data:{
                     firstName,
                     lastName,
