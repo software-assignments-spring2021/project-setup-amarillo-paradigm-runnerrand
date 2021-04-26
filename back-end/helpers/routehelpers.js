@@ -16,10 +16,16 @@ module.exports = {
 
     schemas: {
         authSchema: Joi.object().keys({
+            avatar: Joi.object().keys({
+                contentType:Joi.string(),
+                image:Joi.binary(),
+            }),
             firstName: Joi.string().required(),
             lastName: Joi.string().required(),
             email: Joi.string().email().required(),
-            password: Joi.string().required()
+            password: Joi.string().required(),
+            phone:Joi.string(),
+            zip:Joi.string()
         }),
         postSchema: Joi.object().keys({
             title: Joi.string().required(),
