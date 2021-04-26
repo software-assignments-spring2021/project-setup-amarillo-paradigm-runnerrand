@@ -14,11 +14,44 @@
 #home .form{
     margin: 0px;
     margin-bottom: 2%;
+    padding: 16px 45px;
+}
+#home .form p{
+    font-weight: 500;
+    margin-bottom: .5rem;
+}
+#home .form input{
+    background-color: #FFF;
+    border: 1px solid #3f51b5;
+    padding: 8px 16px;
+    transition: all .3s;
+}
+#home .form input:hover,
+#home .form input:focus{
+    border-radius: 10px;
 }
 #home h3,#home h1{
     /* text-align: center; */
     color: #3f51b5;
     font-size: 2rem;
+    display: flex;
+    align-self: center;
+}
+
+#home .help{
+    display: flex;
+}
+#home .form{
+    margin-top: 2%;
+    margin-left: 50px;
+    max-width: 600px;
+    display: flex;
+}
+#home .form span input{
+    width: 100%;
+}
+#home .form span:last-child{
+    margin-left: 30px;
 }
 
 #home .tasks{
