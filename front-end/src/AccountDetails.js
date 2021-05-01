@@ -4,14 +4,6 @@ import ProfilePicture from './ProfilePicture';
 import Button from 'react-bootstrap/Button';
 
 const AccountDetails = (props) => {
-    // const accountInfo ={
-    //     userName: "null",
-    //     firstName : "null", 
-    //     lastName : "null",
-    //     email : "null",
-    //     phoneNumber: "null",
-    //     zipCode : "null"
-    // }
     const [token,setToken] = useState()
     const [placeholderImg,setPlaceholderImg] = useState(null)
     const [accountInfo,setAccountInfo] = useState()
@@ -152,22 +144,6 @@ const AccountDetails = (props) => {
             </section>
         </section>
     )
-}
-
-const handleProfilePicture = (props) =>{
-    // window.location.href = '/AccountDetails/ChangeAvatar'
-    window.location.href = '/AccountDetails/AvatarChanger'
-
-}
-
-const handleEditDetails=(props)=>{
-    // redirect to account details editing page
-    window.location.href = '/AccountDetails/ChangeAccountDetails'
-}
-
-const handleGoBack=(props)=>{
-    // redirect to the previous profile page
-    window.location.href = '../Profile'
 }
 
 export default AccountDetails;

@@ -20,9 +20,6 @@ import PostConfirmation from './PostConfirmation'
 import TaskListGen from './TaskListGen'
 import TaskBrowser from './TaskBrowser'
 import MyTasks from './MyTasks'
-import ChangeAvatar from './ChangeAvatar'
-import AvatarChanger from './AvatarChanger'
-import ChangeAccountDetails from "./ChangeAccountDetails"
 import MyTasksPosted from "./MyTasksPosted"
 
 import AccountDetailsSuccess from "./AccountDetailsSuccess"
@@ -157,7 +154,7 @@ const App = (props) => {
           <Post />
         </Route>
 
-        
+
       </Router>
     )
   }
