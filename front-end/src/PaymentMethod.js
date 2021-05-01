@@ -9,8 +9,11 @@ const cardTypes = [
 const PaymentMethod = () =>{
     return (
         <section>
-            <button onClick={handleGoBack}> Go Back </button>
-            <h1 className="title">Payment Method</h1>
+            <div className="head flex">
+                <h1 className="title">Payment Method</h1>
+                
+                <button onClick={handleGoBack}> Go Back </button>
+            </div>
             <hr></hr>
 
             <p className="item">Credit Card Type: </p>

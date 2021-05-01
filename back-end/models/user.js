@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs')
 const Schema = mongoose.Schema
 
 const userSchema = new Schema({
+    avatar:{ image: Buffer, contentType: String },
     email: {
         type: String,
         required: true,
@@ -14,7 +15,9 @@ const userSchema = new Schema({
         required: true
     },
     firstName: String,
-    lastName: String
+    lastName: String,
+    phone:Number,
+    zip:Number
 })
 
 userSchema.pre('save', async function(next){

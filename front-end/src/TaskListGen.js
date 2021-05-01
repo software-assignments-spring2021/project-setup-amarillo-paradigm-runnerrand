@@ -9,7 +9,7 @@ const TaskListGen = (props) => {
 
   useEffect(() => {
     console.log('fetching data')
-    axios.get('http://localhost:3000/tasks_api')
+    axios.get(`${process.env.REACT_APP_BACKEND}/tasks_api`)
       .then((response) => {
         console.log(response)
         setData(response.data)

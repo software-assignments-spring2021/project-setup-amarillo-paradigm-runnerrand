@@ -23,6 +23,10 @@ import MyTasks from './MyTasks'
 import ChangeAvatar from './ChangeAvatar'
 import AvatarChanger from './AvatarChanger'
 import ChangeAccountDetails from "./ChangeAccountDetails"
+import MyTasksPosted from "./MyTasksPosted"
+
+import AccountDetailsSuccess from "./AccountDetailsSuccess"
+import TaskAcceptSuccess from "./TaskAcceptSuccess"
 
 
 const TaskWrapper = ({ match }) => {
@@ -47,114 +51,115 @@ const TaskDetailsWrapper = ({ match }) => {
 const App = (props) => {
   return (
     <Router>
-      <Route exact path="/" >
-        <Welcome />
-      </Route>
+        <Route exact path="/" >
+          <Welcome />
+          </Route>
+        
+        <Route exact path="/Home" >
+          <NavBar />
+          <Home />
+          </Route>
 
-      <Route exact path="/Home" >
-        <NavBar />
-        <Home />
-      </Route>
-
-      <Route exact path="/TaskList" >
-        <NavBar />
-        <TaskList />
-      </Route>
-
-
+          <Route exact path="/TaskList" >
+          <NavBar />
+          <TaskList />
+        </Route>
 
 
-      <Route path="/tasks">
-        <TaskListGen />
-      </Route>
 
 
-      <Route exact path="/TaskDetails" >
-        <NavBar />
-        <TaskDetails />
-      </Route>
+          <Route path="/tasks">
+            <TaskListGen />
+          </Route>
 
-      <Route path="/TaskDetails/:id" component={TaskDetailsWrapper} />
 
-      <Route exact path="/Login" >
-        <NavBar />
-        <Login />
-      </Route>
+        <Route exact path="/TaskDetails" >
+          <NavBar />
+          <TaskDetails />
+        </Route>
 
-      <Route exact path="/Signup" >
-        <NavBar />
-        <Signup />
-      </Route>
+        <Route path="/TaskDetails/:id" component={TaskDetailsWrapper} />
 
-      <Route exact path="/SignupSuccess" >
-        <NavBar />
-        <SignupSuccess />
-      </Route>
+        <Route exact path="/Login" >
+          <NavBar />
+          <Login />
+          </Route>
 
-      <Route exact path="/PostSuccess" >
-        <NavBar />
-        <PostSuccess />
-      </Route>
+        <Route exact path="/Signup" >
+          <NavBar />
+          <Signup />
+          </Route>  
 
-      <Route exact path="/Profile" >
-        <NavBar />
-        <Profile />
-      </Route>
+        <Route exact path="/SignupSuccess" >
+          <NavBar />
+          <SignupSuccess />
+        </Route>
 
-      <Route exact path="/AccountDetails" >
-        <NavBar />
-        <AccountDetails />
-      </Route>
+        <Route exact path="/AccountDetailsSuccess" >
+          <NavBar />
+          <AccountDetailsSuccess />
+        </Route> 
 
-      <Route exact path="/PaymentMethod" >
-        <NavBar />
-        <PaymentMethod />
-      </Route>
+        <Route exact path="/TaskAcceptSuccess" >
+          <NavBar />
+          <TaskAcceptSuccess />
+        </Route> 
+        
+        <Route exact path="/PostSuccess" >
+          <NavBar />
+          <PostSuccess />
+        </Route>  
 
-      <Route exact path="/mytasks" >
-        <NavBar />
-        <MyTasks />
-      </Route>
+        <Route exact path="/Profile" >
+          <NavBar />
+          <Profile />
+        </Route>
 
-      <Route path="/display_mytasks/:id" component={TaskWrapper} />
+        <Route exact path="/AccountDetails" >
+          <NavBar />
+          <AccountDetails />
+        </Route>
 
-      <Route exact path="/ResetPassword" >
-        <NavBar />
-        <ResetPassword />
-      </Route>
+        <Route exact path="/PaymentMethod" >
+          <NavBar />
+          <PaymentMethod />
+        </Route>
 
-      <Route exact path="/PasswordResetConfirmation" >
-        <NavBar />
-        <PasswordResetConfirmation />
-      </Route>
+        <Route exact path="/mytasks" >
+          <NavBar />
+          <MyTasks />
+        </Route>
 
-      <Route exact path="/PostConfirmation" >
-        <NavBar />
-        <PostConfirmation />
-      </Route>
+        <Route exact path="/mytasksposted" >
+          <NavBar />
+          <MyTasksPosted />
+        </Route>
 
-      <Route exact path="/Post" >
-        <NavBar />
-        <Post />
-      </Route>
+        <Route path="/display_mytasks/:id" component={TaskWrapper} />
 
-      <Route exact path="/AccountDetails/ChangeAvatar" >
-        <NavBar />
-        <ChangeAvatar />
-      </Route>
+        <Route exact path="/ResetPassword" >
+          <NavBar />
+          <ResetPassword />
+        </Route>
 
-      <Route exact path="/AccountDetails/AvatarChanger" >
-        <NavBar />
-        <AvatarChanger />
-      </Route>
+        <Route exact path="/PasswordResetConfirmation" >
+          <NavBar />
+          <PasswordResetConfirmation />
+        </Route>
 
-      <Route exact path="/AccountDetails/ChangeAccountDetails" >
-        <NavBar />
-        <ChangeAccountDetails />
-      </Route>
+        <Route exact path="/PostConfirmation" >
+          <NavBar />
+          <PostConfirmation />
+        </Route>
 
-    </Router>
-  )
-}
+        <Route exact path="/Post" >
+          <NavBar />
+          <Post />
+        </Route>
+
+        
+      </Router>
+    )
+  }
 
 export default App;

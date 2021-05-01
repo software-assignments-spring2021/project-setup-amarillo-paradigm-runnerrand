@@ -11,6 +11,24 @@ const Post = require('../models/post')
 router.route('/create')
     .post(validateBody(schemas.postSchema),passport.authenticate('jwt', { session: false}), PostsController.create)
 
+router.route('/:id/get')
+    .get(PostsController.getPostDetails)
+
+router.route('/:id/pending-approval')
+    .post(passport.authenticate('jwt', { session: false}), PostsController.pendingApproval)
+
+router.route('/:id/completed')
+    .post(passport.authenticate('jwt', { session: false}), PostsController.markComplete)
+
+router.route('/:id/accept')
+    .post(passport.authenticate('jwt', { session: false}), PostsController.accpetTask)
+
+router.route('/ongoing')
+    .get(passport.authenticate('jwt', { session: false}), PostsController.ongoing)
+
+router.route('/completed')
+    .get(passport.authenticate('jwt', { session: false}), PostsController.completed)
+
 router.route('/auth_user')
     .get(passport.authenticate('jwt', { session: false}), PostsController.get_auth_user_posts)
 
@@ -21,7 +39,7 @@ router.route('/get')
 //get all listings under specific user
 router.route("/home").get(async (req, res) => {
   try {
-   let findPosts = await Post.find({ status:"new" });
+   let findPosts = await Post.find({ status:"new",category:req.query.category });
    res.json(findPosts);
       
   } catch (error) {

@@ -3,6 +3,22 @@
     background-color: #3f51b5;
 }
 
+.navbar-custom  .user_loggedin{
+    display: flex;
+    color: #FFF;
+    align-items: center;
+    border-left: 1px solid #FFF;
+    padding-left:1%;
+}
+.navbar-custom  .user_loggedin  .avatar{
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.navbar-custom  .user_loggedin span{
+    display: inline-block;
+}
+
 .navbar-custom sup{
     font-weight: bold;
 }

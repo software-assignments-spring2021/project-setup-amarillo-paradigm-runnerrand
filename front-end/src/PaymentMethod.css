@@ -2,6 +2,12 @@
     text-align: center;
 }
 
+.head.flex{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
 .title{
     /* font-family: Andale Mono,cochin; */
     font-family: georgia;
@@ -49,11 +55,9 @@
     color: #333;
 }
 
-button {
-    /* background-color: #909090; */
+/* button {
     background-color: white;
     font-family: georgia;
-    /* font-family: Andale Mono,cochin; */
     color: black;
     font-size: 20px;
     border-radius: 10px;
@@ -61,15 +65,13 @@ button {
 }
 
 button:hover {
-    /* background-color: #909090; */
     background-color: #909090;
     font-family: georgia;
-    /* font-family: Andale Mono,cochin; */
     color: black;
     font-size: 20px;
     border-radius: 10px;
     padding: 10px;
-}
+} */
 
 .item {
     font-family: georgia;

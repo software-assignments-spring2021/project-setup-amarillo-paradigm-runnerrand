@@ -6,3 +6,14 @@
     width: 50%;
     height: 50%;
 }
+
+
+.task-preview .card-title{
+    color: #3f51b5;
+}
+
+.task-preview .card-text{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

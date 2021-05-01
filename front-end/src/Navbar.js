@@ -6,6 +6,8 @@ import React, { useState,useEffect } from "react";
 import { Link,Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
+import profile from './profile.png'
+
 
 const NavBar = () => {
     const [user,setUser] = useState(null)
@@ -13,7 +15,7 @@ const NavBar = () => {
 
     useEffect(() => {
         const token = localStorage.getItem("token")
-        fetch('http://127.0.0.1:3000/users/auth_user',{
+        fetch(`${process.env.REACT_APP_BACKEND}/users/auth_user`,{
             method:"GET",
             headers:{
                 "Content-Type":"application/json",
@@ -22,20 +24,25 @@ const NavBar = () => {
         }).then(res => res.json())
         .then(response => {
             console.log(response)
+            localStorage.setItem("user",JSON.stringify(response))
             setUser(response)
             setIsLoading(false)
             // return <Redirect to="/profile" />
         }).catch(err => {
-            console.log(err)
-            setIsLoading(false)
+            console.log(err.name)
             localStorage.removeItem("token")
+            localStorage.removeItem("user")
+            let path = window.location.pathname
+            if(path !== "/Home" && path !== "/login" && path !== "/signup" && path.includes("Success")){
+                window.location.href = "/login"
+            }
+            setIsLoading(false)
         })
     }, [])
     return(
         <Navbar variant="dark" className="navbar-custom">
             <Navbar.Brand>
                 RunNErrand
-                { user !== null && <sup> (Welcome! {user.firstName} {user.lastName})</sup> }
             </Navbar.Brand>
             <Navbar.Collapse className="justify-content-end">
 
@@ -68,11 +75,26 @@ const NavBar = () => {
                         </ButtonGroup>
 
                         <ButtonGroup className="mr-2">
-                            <Link to="/mytasks"><Button variant="outline-light">My Tasks</Button></Link>
+                            <Link to="/mytasks"><Button variant="outline-light">My Accepted Tasks</Button></Link>
+                        </ButtonGroup>
+                        <ButtonGroup className="mr-2">
+                            <Link to="/mytasksposted"><Button variant="outline-light">My Posted Tasks</Button></Link>
                         </ButtonGroup>
                         <ButtonGroup className="mr-2">
                             <Link to="/profile"><Button variant="outline-light">Profile</Button></Link>
                         </ButtonGroup>
+
+                        { user !== null && 
+                            <div className="user_loggedin">
+                                { 
+                                    user.avatar === undefined ?
+                                    <img className="avatar" src={profile} alt={user.firstName}/>
+                                    :
+                                    <img className="avatar" src={"data:image/png;base64,"+user.avatar} alt={user.firstName}/>
+                                }
+                                <span> (Welcome! {user.firstName} {user.lastName})</span> 
+                            </div>
+                        }
                     </>
                 }
             </Navbar.Collapse>
