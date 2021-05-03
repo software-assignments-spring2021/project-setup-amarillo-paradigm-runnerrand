@@ -1,16 +1,16 @@
 // import and instantiate express
 const express = require("express") // CommonJS import style!
+
 const app = express() // instantiate an Express object
 const cors = require('cors')  // Enable CORS for localhost API proxy access
 
 // import some useful middleware
 const bodyParser = require("body-parser") // middleware to help parse incoming HTTP POST data
-const multer = require("multer") // middleware to handle HTTP POST requests with file uploads
+// const upload = multer({ dest: "uploads/" });
 const axios = require("axios") // middleware for making requests to APIs
 require('dotenv').config(); // load environmental variables from a hidden file named .env
 const morgan = require("morgan") // middleware for nice logging of incoming HTTP requests
 const mongoose = require('mongoose');
-
 // we will put some server logic here later...
 //const User = require('./User')
 
@@ -28,6 +28,7 @@ app.use(express.json()) // decode JSON-formatted incoming POST data
 app.use(express.urlencoded({ extended: true })) // decode url-encoded incoming POST data
 
 const mongo_uri = process.env.MONGODB_KEY; 
+// const mongo_uri = process.env.MONGO_KEY_2; 
 
 mongoose.Promise = global.Promise
 

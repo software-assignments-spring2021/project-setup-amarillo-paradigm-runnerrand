@@ -8,10 +8,11 @@ const TaskDetails = (props) => {
 
     const [data, setData] = useState([])
     const [token,setToken] = useState(null)
+    const [msg,setMsg] = useState('')
 
   useEffect(() => {
     setToken(localStorage.getItem("token"))
-    axios.get(`http://localhost:3000/tasks_api/${props.taskId}`)
+    axios.get(`${process.env.REACT_APP_BACKEND}/posts/${props.taskId}/get`)
       .then((response) => {
         console.log(response.data)
         setData(response.data)
@@ -28,10 +29,32 @@ const TaskDetails = (props) => {
 
   const routerContext = useContext(__RouterContext);
   const handleAcceptButton = ()=>{
+      setMsg('')
         if(token === null){
             window.location.href = '/login';
         }else{
-            window.location.href = '/Home';
+            axios({
+                method:'post',
+                url:`${process.env.REACT_APP_BACKEND}/posts/${props.taskId}/accept`,
+                headers:{
+                    "Content-Type":"application/json",
+                    "Authorization":token
+                },
+                data:{
+                    id:data._id,
+                    author:data.author
+                }
+            })
+            .then((response) => {
+                console.log(response)
+                // setData(response.data)
+                window.location.href = '/TaskAcceptSuccess';
+            })
+            .catch((err) => {
+                console.log(`Error`)
+                setMsg("You cannot accept your own task")
+                console.error(err)
+            })
         }
     }
   console.log('context object:', routerContext);
@@ -40,15 +63,15 @@ const TaskDetails = (props) => {
             <div>
                 <h1>Task Details</h1>
                 <p></p>
-                <p><b> Task ID: </b> {data.id} </p>
+                <p><b> Task ID: </b> {data._id} </p>
                 <p><b> Task Title: </b> {data.title} </p>
                 <p><b> Category: </b> {data.category} </p>      
 		        <p><b>Campus: </b>{data.campus}</p>
-		        <p><b>Price: </b>{data.price}</p>
-		        <p><b>Details: </b>{data.description}</p>
+		        <p><b>Budget: </b>{data.budget}</p>
+		        <p><b>Details: </b>{data.details}</p>
                 <p><b>Contact: </b>{data.contact}</p>
             </div>
-
+            <p className="text-danger">{msg}</p>
             <div>
                 <button onClick={handleAcceptButton}>Accept</button> 
                 <button className="go-back" onClick={() => routerContext.history.goBack()}>Go Back</button>

@@ -46,7 +46,7 @@ const postSchema = new Schema({
     status:{
         type:String,
         required:true,
-        default:"scheduled"
+        default:"new"
     }
 })
 
