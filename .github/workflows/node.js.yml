@@ -33,6 +33,9 @@ jobs:
         echo "Run react rendering tests"
         cd front-end
         npm test
+        env: 
+          SKIP_PREFLIGHT_CHECK: ${{ secrets.SKIP_PREFLIGHT_CHECK }}
+          REACT_APP_BACKEND: ${{ secrets.REACT_APP_BACKEND }}
     - run: |
         echo "Install backend modules"
         cd back-end
@@ -41,4 +44,5 @@ jobs:
         echo "Test if Express server is alive"
         cd back-end
         npm test
-        
+        env:
+          MONGODB_KEY: ${{ secrets.MONGODB_KEY }}
