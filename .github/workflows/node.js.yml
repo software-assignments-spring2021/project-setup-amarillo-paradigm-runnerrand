@@ -33,4 +33,8 @@ jobs:
         npm test
     - run: |
         cd back-end
+        npm install
+    - run: |
+        cd back-end
         npm test
+        
