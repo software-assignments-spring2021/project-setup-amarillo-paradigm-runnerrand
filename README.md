@@ -1,4 +1,4 @@
-## RunNErrand V1.0
+## RunNErrand
 
 [RunNErrand MVP Site http://104.131.170.212/](http://104.131.170.212/)
 
