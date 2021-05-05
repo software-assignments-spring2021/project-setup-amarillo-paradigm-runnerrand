@@ -4,7 +4,7 @@
   "description": "The back-end of your project will live in this directory.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon server.js"
   },
   "repository": {
@@ -31,12 +31,17 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "multer-gridfs-storage": "^4.2.0",
+    "nyc": "^15.1.0",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^4.3.4",
-    "nodemon": "^2.0.7"
+    "jest": "^26.6.3",
+    "mocha": "^8.3.2",
+    "nodemon": "^2.0.7",
+    "really-need": "^1.9.2",
+    "supertest": "^6.1.3"
   }
 }
