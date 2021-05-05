@@ -50,3 +50,6 @@ jobs:
         MONGO: ${{ secrets.MONGO }}
         REACTBACKEND: ${{ secrets.REACTBACKEND }}
         SKIPPREFLIGHT: ${{ secrets.SKIPPREFLIGHT }}
+    - name:  Restart React/Express Services
+      run: |
+        pm2 restart all
