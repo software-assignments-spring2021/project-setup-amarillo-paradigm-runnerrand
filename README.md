@@ -1,6 +1,6 @@
 ## RunNErrand
 
-[RunNErrand MVP Site](http://104.131.170.212/)
+[RunNErrand MVP Site http://104.131.170.212/](http://104.131.170.212/)
 
 ### Project Description:
 - RunNErrand is a Web App that not only provides opportunities to students who want to earn some extra cash by connecting with others in their community but also offers assistance to those students who need help with daily errands or other issues. With this app, students can either post tasks or accept the most suitable jobs for them by filtering the locations. 
