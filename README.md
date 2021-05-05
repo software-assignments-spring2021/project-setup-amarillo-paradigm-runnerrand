@@ -25,8 +25,5 @@
 ### How to contribute to our project:
 - Please refer to [CONTRIBUTING.md](https://github.com/agile-dev-assignments/project-setup-amarillo-paradigm-runnerrand/blob/master/CONTRIBUTING.md)
 
-### Instructions for building and testing the project:
-- TBD
-
 ### Relevant files:
 - [Project Proposal](https://github.com/agile-dev-assignments/project-proposal-cjjjz/blob/main/README.md)
