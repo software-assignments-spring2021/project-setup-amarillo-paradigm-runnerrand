@@ -46,6 +46,9 @@ const TaskDetailsWrapper = ({ match }) => {
 
 
 const App = (props)=> {
+
+  document.title = 'RunNErrand'
+
   return (
     <Router>
         <Route exact path="/" >
