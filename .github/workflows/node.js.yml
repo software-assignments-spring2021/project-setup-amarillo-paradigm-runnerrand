@@ -43,10 +43,7 @@ jobs:
         npm test
     - name: Setup secret environmental variables
       run: |
-        echo $MONGODB_KEY
-        echo $REACT_APP_BACKEND
-        echo $SKIP_PREFLIGHT_CHECK
+        export MONGODBKEY=$MONGO
       env:
-        MONGODB_KEY: ${{ secrets.MONGODB_KEY }}
-        REACT_APP_BACKEND: ${{ secrets.REACT_APP_BACKEND }}
-        SKIP_PREFLIGHT_CHECK: ${{ secrets.SKIP_PREFLIGHT_CHECK }}
+        MONGODB_KEY: ${{ secrets.MONGO }}
+
