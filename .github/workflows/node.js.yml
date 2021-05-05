@@ -25,19 +25,19 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: |
-        echo "Install frontend modules"
+    - name: Install frontend modules
+      run: |
         cd front-end
         npm install
-    - run: |
-        echo "Run react rendering tests"
+    - name: Run react rendering tests
+      run: |
         cd front-end
         npm test
-    - run: |
-        echo "Install backend modules"
+    - name: Install backend modules
+      run: |
         cd back-end
         npm install
-    - run: |
-        echo "Test if Express server is alive"
+    - name: Test if Express server is alive
+      run: |
         cd back-end
         npm test
