@@ -46,7 +46,7 @@ app.use('/posts', require('./routes/posts'))
 
 
 app.get("/", (req, res) => {
-  res.send("RunNErrand")
+  res.send("Welcome to RunNErrand!")
 })
 
 
