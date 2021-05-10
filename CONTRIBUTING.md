@@ -3,7 +3,7 @@
 ### How To Run Our Web App: 
 * Go to our back-end directory, run via command lines 'npm install' -> 'npm start'. 
 * Then direct to the front-end directory, run 'npm install' -> 'npm start'. 
-* In order to have information stored, Robo 3T needs to be open. __To be continued
+* In order to have information stored, Robo 3T needs to be open and connected to the database, which is pinned in our slack channel. 
 
 ### Project Values:
 RunNErrand’s value is to support college students to alleviate financial burden; and to create a community for students outside classrooms. 
